@@ -15,12 +15,12 @@
 </head>
 <body>
     <div class="joli" style="display:flex;"></div>
-    <div class="logo" style="background-color:#f8f9fa;">
+    <div class="logo" style="background-color:#f8f9fa;position:fixed;width:100%;" >
         <div><img src="images/images.jpeg" data-toggle="modal" data-target="#exampleModal"></div>
         <div class="menu">
         <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-  <button class="btn btn-outline-success" type="submit">Accueille</button>
+  <button class="btn btn-outline-success" type="submit">Accueile</button>
     <button class="navbar-toggler" type="button"
      data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,8 +49,8 @@
         <ul><div></div></ul>
       </ul>
       <form class="d-flex" role="search">
-      <button class="btn btn-outline-success" type="submit">Inscription</button>
-      <ul><div></div></ul>
+     <!--  <button class="btn btn-outline-success" type="submit">Inscription</button>
+      <ul><div></div></ul> -->
         <button class="btn btn-outline-success" type="submit">Historique</button>
       </form>
       
@@ -59,7 +59,7 @@
   <div class="conect" style="margin-left: 10%;display: flex;gap:10px;">
       <button class="btn btn-outline-success" type="submit">Incription</button>
         
-        <button class="btn btn-outline-success" type="submit">Conection</button>
+        <button class="btn btn-outline-success" type="submit">Connection</button>
         </div>
 </nav>
 
@@ -67,13 +67,13 @@
 
         </div>  
 </div>
-<div class="corps">
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="bg-image" style="background-image: url('images/pexels-roberto-nickson-2559941-1.jpg')">
-
-  <div class="description" style="background-color: #f5f5f5;width:30%;">
-    <div><ul>
-        
+<div class="corps"style="height: 1000px;">
+  <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> -->
+  <div class="bg-image" style=" background-image: url('images/pexels-roberto-nickson-2559941-1.jpg');height:100%;">
+ 
+  <div class="description" style="background-color: #f5f5f5;width:20%;">
+    <div>
+      <ul>   
     <h3><i class="fa-sharp fa-solid fa-graduation-cap"></i> ecole privé</h3>  
            <h1> LA REUSSIE</h1>
     
