@@ -20,50 +20,56 @@
     <div id="formule"  >
       <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" >
           
-            <form action="" style="width:80%; ">
+            <form action="afficher_tab_employes.php" method="post" style="width:80%; ">
                 <div class="mb-3 row form-inline" >
                   <label for="exampleFormControlInput1" class="form-label col-lg-3">PRENOM:</label>
-                  <input type="prenom" class="form-control col-lg-6" id="exampleFormControlInput1" value="<?php echo $prenom?>">
+                  <input type="text" name="prenom" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre prenom" >
                </div>
                 <div class="mb-3 row form-inline">
                   <label for="exampleFormControlInput1" class="form-label col-lg-3">NOM:</label>
-                  <input type="nom" class="form-control col-lg-6" id="exampleFormControlInput1"value="<?php echo $nom?>">
+                  <input type="text"  name="nom"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre nom">
                 </div>
               <div class="mb-3 row form-inline">
                 <label for="exampleFormControlInput1" class="form-label col-lg-3">ADRESSE:</label>
-                <input type="adresse" class="form-control col-lg-6" id="exampleFormControlInput1"value="<?php echo $adresse?>">
+                <input type="text"  name="adresse"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre adresse">
               </div>
               <div class="mb-3 row form-inline">
                 <label for="exampleFormControlInput1" class="form-label col-lg-3">EMAIL:</label>
-                <input type="email" class="form-control col-lg-6" id="exampleFormControlInput1" value="<?php echo $email?>">
+                <input type="text" name="email"  class="form-control col-lg-6" id="exampleFormControlInput1"  placeholder="votre email">
                 </div>
                 <div class="mb-3 row form-inline">
                 <label for="exampleFormControlInput1" class="form-label col-lg-3 ">DATE_NAISSANCE:</label>
-                <input type="date" class="form-control col-lg-6" id="exampleFormControlInput1" value="<?php echo $date_naissance?>">
+                <input type="date"  name="date_naissance"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre date de naissance">
               
               </div>
               <div class="mb-3 row form-inline">
                 <label for="exampleFormControlInput1" class="form-label col-lg-3">FONCTION:</label>
-                <input type="fonction" class="form-control col-lg-6" id="exampleFormControlInput1" value="<?php echo $fonction?>">
+                <select name="fonction"  name="fonction" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre sexe">
+                  <option value="0"></option>
+                  <option value="1">ADMINISTRATEUR</option>
+                  <option value="2">SECRETAIRE</option>
+                  <option value="1">PROFFESSEUR</option>
+                  <option value="2">COMPTABLE</option>
+              </select>
               </div>
               <div class="mb-3 row form-inline">
-                <label for="exampleFormControlInput1" class="form-label col-lg-3" >NOM_EMPLOYE:</label>
-                <input type="nom_tuteur" class="form-control col-lg-6" id="exampleFormControlInput1"value="<?php echo $nom_employe?>">
+                <label for="exampleFormControlInput1" class="form-label col-lg-3" >NATIONALITE:</label>
+                <input type="text"  name="nationalite" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre nationalite">
               </div>
-
+            
               <div class="mb-3 row form-inline">
                 <label for="exampleFormControlInput1" class="form-label col-lg-3">SEXE:</label>
-                <select name="sexe" class="form-control col-lg-6" id="exampleFormControlInput1" value="<?php echo $sexe?>">
+                <select name="sexe"  name="sexe" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre sexe">
                   <option value="0"></option>
                   <option value="1">FEMININ</option>
                   <option value="2">MASCULININ</option>
               </select>
                 
               </div>
-              <div class="mb-3 row form-inline">
+            <!--   <div class="mb-3 row form-inline">
                 <label for="exampleFormControlInput1" class="form-label col-lg-3">NATIONALITE:</label>
-                <input type="nationalite" class="form-control col-lg-6" id="exampleFormControlInput1" value="<?php echo $nationalite?>">
-              </div>
+                <input type="texte" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre nationalite">
+              </div> -->
               <div class="col-12 text-center" style=" dispay:flex;justify-content:center;">
                   <button class="btn btn-primary" type="submit">ENVOYER</button>
               </div>  
@@ -74,8 +80,8 @@
           #formul{
             border: 2px solid black;
             border-radius:1rem;
-            margin-left:600px;
-            margin-right:600px;
+            margin-left:500px;
+            margin-right:500px;
             background-color: ghostwhite;
 
            padding: 30px;
