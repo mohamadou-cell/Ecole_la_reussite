@@ -2,8 +2,16 @@
 // if(isset($_POST["envoyer"])){
 
 
-    /* if(isset($_POST["prenom"],$_POST["nom"], $_POST["date_naissance"] ,$_POST["adresse"],$_POST["email"],
-    $_POST["date_naissance"],$_POST["fonction"],$_POST["nationalite"],$_POST["telephone_tuteur"],$_POST["sexe"] ))
+  /*   if(isset($_POST["prenom"],
+    $_POST["nom"], 
+    $_POST["date_naissance"] ,
+    $_POST["adresse"],
+    $_POST["email"],
+    $_POST["date_naissance"],
+    $_POST["fonction"],
+    $_POST["nationalite"],
+    $_POST["telephone_tuteur"],
+    $_POST["sexe"] ))
     {
         if(!empty($_POST["prenom"]) && !empty($_POST["nom"]) && !empty($_POST[" adresse"]) 
                 && !empty($_POST["email"]) && !empty($_POST["date_naissance"]) && !empty($_POST[""]) 
@@ -29,7 +37,7 @@
         
                 include("Connection_dba.php");
                 $sth = $dbco->prepare(" INSERT INTO inscription(prenom,nom,date_naissance,adresse,sexe,nationalite,email,nom_tuteur,numero_tuteur)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?,?) ");
                  $sth->bindParam(':prenom', $prenom);
                  $sth->bindParam(':nom', $nom);
                  $sth->bindParam(':date_naissance', $date);
@@ -49,16 +57,7 @@
             }
 
     }
-     */
-    include("Connection_dba.php");
-   /* LIAISON AVEC LE FORMULAIRE A LA BASE DE DONNEE*/
+      */
    
-   /* LIAISON AVEC LE FORMULAIRE A LA BASE DE DONNEE*/
-    /*ENVOYER LES DONNEES DANS LA BASE DE DONNEEE*/
-      $recup = $connection->exec("INSERT INTO INSCRIPTION(prenom, nom, adresse, email, date_naissance,fonction, nationalite, sexe) 
-    VALUES('$_POST[prenom]','$_POST[nom]','$_POST[adresse]','$_POST[email]','$_POST[date_naissance]','$_POST[fonction]','$_POST[nationalite]','$_POST[sexe])"); 
-         echo "inscription reussit";
-
-   ?>
 
 
