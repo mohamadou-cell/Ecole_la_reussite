@@ -7,14 +7,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Document</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <link href="page_accueille.css" rel="stylesheet">
-   
-   
 </head>
 <body>
-    <div class="joli" style="display:flex;"></div>
+
+<div class="joli" style="display:flex;">
     <div class="logo" style="background-color:#f8f9fa;position:fixed;width:100%;" >
         <div><img src="images/images.jpeg" data-toggle="modal" data-target="#exampleModal"></div>
         <div class="menu">
@@ -45,7 +42,7 @@
             </div>
         </ul>
         
-        <button class="btn btn-outline-success" type="submit"><a href="Admissiblite.php">Admissiblité</a> </button>
+        <button class="btn btn-outline-success" type="submit"><a href="">Admissiblité</a> </button>
         <ul><div></div></ul>
       </ul>
       <form class="d-flex" role="search">
@@ -65,101 +62,60 @@
 
         </div>
 
-        </div>  
-</div>
-<div class="corps"style="height: 1000px;">
-  <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> -->
-  <div class="bg-image" style=" background-image: url('images/pexels-roberto-nickson-2559941-1.jpg');height:100%;">
- 
-  <div class="description" style="background-color: #f5f5f5;width:20%;margin-top:7%;">
-    <div>
-      <ul>   
-    <h3><i class="fa-sharp fa-solid fa-graduation-cap"></i> ecole privé</h3>  
-           <h1> LA REUSSIE</h1>
-    
-    </ul>
-    <ul>
+        </div> 
         
-           Enségnement Général :   <h2>Primaire & Secondaire </h2>
-        
-        <p>serie :  S/L De la <h3>CP à la TÉRMINALE</h3></p>
-    </ul>
-    <ul>
-        
-           <h3><i class="fa-sharp fa-solid fa-location-dot"></i>  Keur Mbaye Fall </h3>
-      
-        
-       <h3><i class="fa-sharp fa-solid fa-envelope-circle-check"></i>  ecol22@gmail.com </h3> 
-        
-        <h3>
-        <i class="fa-sharp fa-solid fa-phone-volume"></i> 33 445 44 44</h3>
-        
-    </ul>
-    <ul>
-    <h3><i class="fa-sharp fa-solid fa-book-bookmark"></i>  la culte de l'excélance</h3>
-    </ul>
-  
-    </div>
-    
-  
- 
-   <!-- <div class="bg-image" 
-     style="background-image: url('https://www.codeur.com/tuto/wp-content/uploads/2022/01/pexels-roberto-nickson-2559941-1.jpg');
-            height: 100vh">
-</div> -->
-  
-    
+<div class="container-fluid" style="margin-top: 10%;">
+     <div style="display:flex;justify-content:center"> <h1>Les Conditions D'admission</h1></div>
+      <table class="table table-dark container">
+        <thead>
+          <tr>
+            <th>NIVEAU PRIMAIRE</th>
+           
+            <th>NIVEAU SECONDAIRE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Avoir au moins 5ans</td>
+          
+            <td>avoir au minimum une entrée en 6ième
 
-</div>
-  </div>
-
-</div>
-<div class="bg-image">
-
-<!-- <div class="description" style="background-color:#F0F8FF; width: 30%;">
-    <div><ul>
-        
-    <h3><i class="fa-sharp fa-solid fa-graduation-cap"></i> ecole privé</h3>  
-           <h1> LA REUSSIE</h1>
-    
-    </ul>
-    <ul>
-        
-           Enségnement Général :   <h2>Primaire & Secondaire </h2>
-        
-        <p>serie :  S/L De la <h3>CP à la TÉRMINALE</h3></p>
-    </ul>
-    <ul>
-        
-           <h3><i class="fa-sharp fa-solid fa-location-dot"></i>  Keur Mbaye Fall </h3>
-      
-        
-       <h3><i class="fa-sharp fa-solid fa-envelope-circle-check"></i>  ecol22@gmail.com </h3> 
-        
-        <h3>
-        <i class="fa-sharp fa-solid fa-phone-volume"></i> 33 445 44 44</h3>
-        
-    </ul>
-    <ul>
-    <h3><i class="fa-sharp fa-solid fa-book-bookmark"></i>  la culte de l'excélance</h3>
-    </ul>
-  
-    </div>
-   <!-- <div class="bg-image" 
-     style="background-image: url('https://www.codeur.com/tuto/wp-content/uploads/2022/01/pexels-roberto-nickson-2559941-1.jpg');
-            height: 100vh">
-</div> -->
-  
-    
-</div> 
-</div>          
-
-
-
+</td>
+          </tr>
+          <tr>
+            <td>un extrait de naissance</td>
             
+            <td>fournir un extrait de naissance </td>
+          </tr>
+          <tr>
+            <td>payer les fraits d'inscription</td>
             
-</div>
-<style>
+            <td>payer les fraits d'inscription</td>
+           
+           
+          </tr>
+          <tr>
+            <td>un bultin du seconde semaitre <br> pour les classes intermédiaire</td>
+            
+            <td>un livret de Bac <br> +deux photos d'identités</td>
+          </tr>
+        </tbody>
+      </table>
+    
+   
+    
+    <div class="p-3 mb-2 bg-dark text-white container" style="margin-top:10%;
+text-align: center;" >Les 
+    inscriptions de l'année 2021-2022 se tiendrent du 12 septembre au 2 decombre 2022 </div>
+    
+    
+    <footer style="width: 100%;">
+        <p>Copyright &copy; 2022 Groupe :</p>
+    </footer>
+    </div>
+   
+       <style>
+
     .logo{
         display: flex;
         justify-content: center;
@@ -168,6 +124,15 @@
     .menu{
         margin-left: 250px;
     }
-</style> 
+     footer {
+      background-color: #0c82d1;
+     text-align: center;
+     padding: 50px;
+     color: #fff;
+     margin-top:120px;
+ 
+     }
+   
+</style>  
 </body>
 </html>
