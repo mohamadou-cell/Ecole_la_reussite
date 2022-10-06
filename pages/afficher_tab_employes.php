@@ -39,7 +39,9 @@
                 $sth->execute();
                 echo "Enregistrement réussi";
             }
-            
+            else{
+                echo "Veuillez remplir correctement les champs";
+            }
         }
     }
     ?>
