@@ -24,15 +24,19 @@
             </div>
             <div class="form-group">
                 <label class="form-label" for="profil">Profil</label>
+                <select class="form-select" aria-label="Default select example">
+                <option value=""></option>
+                    <option value="">Administrateur</option>                      
+                    <option value="">Secretaire</option>
+                    <option value="">Professeur</option>
+                    <option value="">Comptable</option>
+                    <option value="">Eleve</option>
+                    <option value="">Surveillant</option>
+                    
+                    </select>
                 
-                <select class="form-control" name="fonction" id="fonction"  holderplace="fonction" required>
-                    <option value="administrateur">Administrateur</option>
-                    <option value="secretaire">Secretaire</option>
-                    <option value="professeur">Professeur</option>
-                    <option value="comptable">Comptable</option>
-                    <option value="eleve">Eleve</option>
-                    <option value="surveillant">Surveillant</option>   
-                </select>
+                
+                    
             </div>
 
             <div class="form-group">
@@ -62,10 +66,10 @@ body{
     display: flex;
     align-items: center;
     justify-content:center;
-    background:#0d6efd;
+    background-color:skyblue;
 }
 .login{
-    width: 360px;
+    width: 550px;
     height:max-content;
     padding:20px;
     border-radius:12px;
