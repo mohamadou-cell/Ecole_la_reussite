@@ -20,7 +20,7 @@
         <div class="menu">
         <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-  <button class="btn btn-outline-success" type="submit">Accueile</button>
+  <button class="btn btn-outline-success" type="submit"><a href="page_accueil.php"> Accueile</a></button>
     <button class="navbar-toggler" type="button"
      data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
 
         </div>
         </ul>
-        <button class="btn btn-outline-success" type="submit">Actualité</button>
+        <button class="btn btn-outline-success" type="submit"><a href="">Actualité</a> </button>
           <ul class="dropdown-menu">
            
             <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -45,21 +45,21 @@
             </div>
         </ul>
         
-        <button class="btn btn-outline-success" type="submit">Admissiblité</button>
+        <button class="btn btn-outline-success" type="submit"><a href="">Admissiblité</a> </button>
         <ul><div></div></ul>
       </ul>
       <form class="d-flex" role="search">
      <!--  <button class="btn btn-outline-success" type="submit">Inscription</button>
       <ul><div></div></ul> -->
-        <button class="btn btn-outline-success" type="submit">Historique</button>
+        <button class="btn btn-outline-success" type="submit"><a href="">Historique</a> </button>
       </form>
       
     </div>
   </div>
   <div class="conect" style="margin-left: 10%;display: flex;gap:10px;">
-      <button class="btn btn-outline-success" type="submit">Incription</button>
+      <button class="btn btn-outline-success" type="submit"><a href="inscription_employes.php">Incription</a></button>
         
-        <button class="btn btn-outline-success" type="submit">Connection</button>
+        <button class="btn btn-outline-success" type="submit"><a href="connection.php"> Connection</a></button>
         </div>
 </nav>
 
