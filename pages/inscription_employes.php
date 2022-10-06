@@ -9,14 +9,27 @@
     <title>Document</title>
  </head>
   <body >
-    <h1 class="text-center" style="margin-top:120px;margin-bottom :40px;font-weight:bold;">INSCRIPTION EMPLOYE </h1>
+    <div class="joli" style="display:flex;"></div>
+        <div class="logo" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;" >
+            <div ><img src="images.jpeg" data-toggle="modal" data-target="#exampleModal"></div>
+                <div class="menu">
+                    <nav class="navbar navbar-expand-lg bg-light">
+                        <div class="container-fluid" style="margin-left:1000px;">
+
+                      <button class="btn btn-outline-success" type="submit"><a href="connection.php">Deconnection</a></button>
+                      </div>
+                   </nav>
+             </div>
+        </div>  
+  </div>
+    <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">INSCRIPTION EMPLOYES </h1>
     <div id="formule"  >
       <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" >
           
             <form action="afficher_tab_employes.php" method="post" style="width:80%; ">
                 <div class="mb-3 row form-inline" >
                   <label for="exampleFormControlInput1" class="form-label col-lg-3">PRENOM:</label>
-                  <input type="text" name="prenom" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre prenom" >
+                  <input type="text" name="prenom" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre prenom" required>
                </div>
                 <div class="mb-3 row form-inline">
                   <label for="exampleFormControlInput1" class="form-label col-lg-3">NOM:</label>
@@ -95,7 +108,8 @@
      text-align: center;
      padding: 50px;
      color: #fff;
-     margin-top:120px
+     margin-top:120px;
+     height:50px;
      }
      h1{
       font-weight:bolder;
@@ -105,15 +119,28 @@
       margin-left:40px;
       display: flex;
       justify-content:center; */
-      
-      
-
     
      }
+     img{
+      margin-left:150px;
+      
+     /*  width:300px;
+    margin-top:100px;
+      padding:30px;
+      object-fit:cover; */
+     }
+     .logo{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+    .menu{
+        margin-left: 250px;
+    }
         </style>
-  </body>
+ </body>
   <footer>
-        <p>Copyright &copy; 2022 Groupe :</p>
+        <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
     </footer>
     <?php
     if($_GET["err"] == "email"){
