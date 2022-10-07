@@ -31,10 +31,11 @@
                    </nav>
              </div>
         </div>  
-
+    <div class="container-fluid" style="display: flex;justify-content:center;">
     <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">INSCRIPTION ELEVES </h1>
-    <div id="formule"  >
-      <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" >
+    </div>
+    <div id="formule"  style="display:flex; justify-content:center;" class="container-fluid">
+      <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" class="container">
           
       <form action="afficher_tab_eleve.php" method="post" style="width:80%; display:block; justify-content:center;">
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
@@ -99,8 +100,8 @@
                 <label for="exampleFormControlInput8" class="form-label col-lg-4" style="display: flex;justify-content:left;">NUMERO TUTEUR:</label>
                 <input type="number" class="form-control col-lg-6" id="exampleFormControlInput8" placeholder="Entrer numero tuteur" name="numero_tuteur" required>
               </div>
-              <div class="col-12 text-center" style=" display:flex;justify-content:center;">
-                  <button class="btn btn-primary" type="submit" name="valider">ENVOYER</button>
+              <div class="col-12 text-center container" style=" display:flex;justify-content:center;">
+                  <button class="btn btn-primary" style="width: 300px;" type="submit" name="valider">ENVOYER</button>
               </div> 
 
             </form>
@@ -110,8 +111,8 @@
           #formul{
             border: 2px solid black;
             border-radius:1rem;
-            margin-left:500px;
-            margin-right:500px;
+            /* margin-left:500px;
+            margin-right:500px; */
             background-color: ghostwhite;
 
            padding: 30px;
