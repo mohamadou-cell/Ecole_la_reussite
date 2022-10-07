@@ -8,7 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Document</title>
  </head>
-  <body >
+  <body>
+ 
     <div class="joli" style="display:flex;"></div>
         <div class="logo" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;" >
             <div ><img src="images.jpeg" data-toggle="modal" data-target="#exampleModal"></div>
