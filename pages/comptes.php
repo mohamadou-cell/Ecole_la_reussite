@@ -103,9 +103,6 @@ error_reporting(E_ALL);
             <div style="display:flex; color:red;flex-direction:columb;"> <?php echo $message;  ?> </div> 
             <?php }?> 
           </form>
-   
-  
-
         </div>
         </div>
     
@@ -145,7 +142,7 @@ error_reporting(E_ALL);
           
         </style>
 
-        
+
   </body>
      <footer class="box-sizing:border-box;">
           <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>

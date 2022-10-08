@@ -58,6 +58,18 @@ $message="";
         }
     }
     ?>
+    <?php
+
+$username = $_POST['username'];
+$stmt = $pdo->prepare("SELECT * FROM users WHERE username=?");
+$stmt->execute([$username]); 
+$user = $stmt->fetch();
+if ($user) {
+    // le nom d'utilisateur existe déjà
+} else {
+    // le nom d'utilisateur n'existe pas
+} 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -182,7 +194,7 @@ $message="";
                 font-weight:bolder;
               }
               img{
-                margin-left:150px;
+               /*  margin-left:80px; */
               }
               
             </style>
