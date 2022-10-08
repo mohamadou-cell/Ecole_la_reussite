@@ -16,8 +16,8 @@ error_reporting(E_ALL);
          if(empty($nom_utilisateur )) $message.= "<li>nom_d'utilisateur incorrecte !</li>";
          if(empty($profil)) $message.="<li>profil incorrecte!</li>";
          if(empty($mot_de_passe )) $message.= "<li>mot_de_passe incorrecte !</li>";
-       if((!empty($id_employes)) and (!empty($id_ins))) $message.= "<li>un des champs doit etre vide !</li>";
-       if((empty($id_employes)) and (empty($id_ins))) $message.= "<li>un des champ doit etre rempli !</li>";
+         if((!empty($id_employes)) and (!empty($id_ins))) $message.= "<li>un des champs doit etre vide !</li>";
+         if((empty($id_employes)) and (empty($id_ins))) $message.= "<li>un des champ doit etre rempli !</li>";
         
           if(empty($message)){
             
@@ -35,25 +35,13 @@ error_reporting(E_ALL);
           
             }
        else{
-       /*  header("location:comptes.php");  */
-      /*   echo $message;  */
+       
       }
          }
         }
       
  ?>
-  <?php
-     /*  $stmt= $dbco-> query('SELECT* FROM comptes');
-     if ($stmt-> rowcount()>0 ){ */
-      /*  while ($row = $stmt->  Fetch(PDO:: FETCH_OBJ)) {
-        
-       } */
-     ?>
-
-   <!-- <p> <strong>comptes</strong> </p> -->
-
-
-  
+ 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,51 +53,54 @@ error_reporting(E_ALL);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Document</title>
  </head>
-  <body >
- 
-  <div class="joli" style="display:flex;"></div>
-        <div class="logo" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;" >
-            <div ><img src="images.jpeg" data-toggle="modal" data-target="#exampleModal"></div>
-                <div class="menu">
-                    <nav class="navbar navbar-expand-lg bg-light">
-                        <div class="container-fluid" style="margin-left:1000px;">
-
-                      <button class="btn btn-outline-success" type="submit"><a href="connection.php">Deconnection</a></button>
+  <body>
+        <div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;background-color:#0c82d1;display:flex;align-items:center;" >
+            <div class="container-fluid"><img src="images.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
+                <div class="menu" style="background-color:#0c82d1;">
+                    <nav class="navbar navbar-expand-lg " style="background-color:#0c82d1;">
+                        <div class="container-fluid" style="gap:15px;float:right;">
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Deconnection</a></button>
                       </div>
                    </nav>
              </div>
         </div>  
-  </div>
-    <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">CREATION COMPTE</h1>
-    <div id="formule"  >
-      <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" >
-          
-            <form action="" method="post" style="width:80%; ">
+    <div class="container-fluid" style="display: flex;justify-content:center;">
+    <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">CREATION COMPTES </h1>
+    </div>
+    <div id="formule"  style="display:flex; justify-content:center;" >
+      <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" class="container col-md-5" >
+            <form action="" method="post" style="width:70%; display:block; justify-content:center;">
                 <div class="mb-3 row form-inline" >
-                  <label for="exampleFormControlInput1" class="form-label col-lg-3">NOM D'ULISATEUR:</label>
-                  <input type="text" name="nom_d'utilisateur" style="display:flex;justify-content:left;" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre nom d'utilisateur" required>
+                  <label for="exampleFormControlInput1" class="form-label col-lg-4" style="display:flex;justify-content:left;">NOM D'ULISATEUR:</label>
+                  <input type="text" name="nom_d'utilisateur"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre nom d'utilisateur" required>
                </div>
                 <div class="mb-3 row form-inline">
-                  <label for="exampleFormControlInput1" class="form-label col-lg-3">PROFIL:</label>
-                  <input type="text"  name="profil" style="display:flex;justify-content:left;"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre profil" required>
+                  <label for="exampleFormControlInput1" class="form-label col-lg-4" style="display:flex;justify-content:left;">PROFIL:</label>
+                  <select type="text" name="profil" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre profil">
+                          <option value=""></option>
+                          <option >Administrateur</option>
+                          <option >Secretaire</option>
+                          <option >Professeur</option>
+                          <option >Comptable</option>
+                        </select>
                 </div>
               <div class="mb-3 row form-inline">
-                <label for="exampleFormControlInput1" class="form-label col-lg-3">MOT DE PASSE:</label>
-                <input type="text"  name="mot_passe" style="display:flex;justify-content:left;"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre mot de passe" required>
+                <label for="exampleFormControlInput1" style="display:flex;justify-content:left;"  class="form-label col-lg-4">MOT DE PASSE:</label>
+                <input type="text"  name="mot_passe"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre mot de passe" >
               </div>
               <div class="mb-3 row form-inline">
-                <label for="exampleFormControlInput1" class="form-label col-lg-3">MATRICULE ELEVES:</label>
+                <label for="exampleFormControlInput1" style="display:flex;justify-content:left;"  class="form-label col-lg-4">MATRICULE ELEVES:</label>
                 <input type="number" name="matricule_eleves"  class="form-control col-lg-6" id="exampleFormControlInput1"  placeholder="matricule de l'eleve">
                 </div>
                 <div class="mb-3 row form-inline">
-                <label for="exampleFormControlInput1" class="form-label col-lg-3 ">MATRICULE EMPLOYES:</label>
+                <label for="exampleFormControlInput1" style="display:flex;justify-content:left;"  class="form-label col-lg-4 ">MATRICULE EMPLOYES:</label>
                 <input type="number" name="matricule_employes"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="matricule de l'employe">
-
+                </div>
               <div class="col-12 text-center" style=" display:flex;justify-content:center; margin-top:20px;">
                   <button class="btn btn-primary" type="submit" name="valider">ENVOYER</button>
               </div> 
               <?php if(!empty($message)); {?>
-            <div style="display:flex; color:red"> <?php echo $message;  ?> </div> 
+            <div style="display:flex; color:red;flex-direction:columb;"> <?php echo $message;  ?> </div> 
             <?php }?> 
           </form>
    
@@ -117,17 +108,16 @@ error_reporting(E_ALL);
 
         </div>
         </div>
-        <style>
-          #formul{
+    
+    <style>
+          
+         #formul{
             border: 2px solid black;
             border-radius:1rem;
-            margin-left:500px;
-            margin-right:500px;
             background-color: ghostwhite;
            padding: 30px;
           }
 
-          
           .form-control{
             border: 1px solid black;
             border-radius:5px;
@@ -135,49 +125,29 @@ error_reporting(E_ALL);
           }
 
           .form-label{
-            font-weight:bolder;
-            display:flex;
-            justify-content:left;
+            font-weight:bolder
           }
-      footer {
-      background-color: #0c82d1;
-     text-align: center;
-     padding: 50px;
-     color: #fff;
-     margin-top:210px;
-     height:50px;
-     }
-     h1{
-      font-weight:bolder;
-
-     }
-     img{
-      margin-left:150px;
-     }
-     .logo{
-        display: flex;
-        justify-content: left;
-        align-items: center;
-    }
-    .menu{
-        margin-left: 250px;
-    }
+          footer {
+            background-color: black;
+            text-align: center;
+            padding: 50px;
+            color: #fff;
+              margin-top:140px; 
+            height:50px;
+            float: bottom;
+          }
+          h1{
+            font-weight:bolder;
+          }
+          img{
+             margin-left:100px; 
+          }
+          
         </style>
 
-        <!-- <script>
-          var b_nomUtilisateur = false; var b_profil= false; var b_motPasse= false; var b_matriculEmploye = false; var b_matriculEleves = false;
-      
-    if (b_prenom =true && b_nomUtilisateur=true &&  b_profil=true &&  b_motPasse=true && b_matriculEmploye =true ) {
-        document.getElementById("mesage").innerText=" envoie serveur";
-        document.getElementById("forme").submit();
-     }
-     else{
-      document.getElementById("mesage").innerText= "le fromulaire n'est pas complet"
-     }
-            
-
-        </script> -->
- </body>
-  <footer>
-        <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
-    </footer>
+        
+  </body>
+     <footer class="box-sizing:border-box;">
+          <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
+      </footer>
+</html>
