@@ -40,20 +40,20 @@
       <form action="afficher_tab_eleve.php" method="post" style="width:80%; display:block; justify-content:center;">
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
                 <label for="exampleFormControlInput1" class="form-label col-lg-4" style="display: flex;justify-content:left;">PRENOM:</label>
-                <input type="text" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="Entrer prenom" name="prenom" required>
+                <input type="text" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="Entrer prenom" name="prenom">
               </div>
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
                 <label for="exampleFormControlInput2" class="form-label col-lg-4" style="display: flex;justify-content:left;">NOM:</label>
-                <input type="text" class="form-control col-lg-6" id="exampleFormControlInput2" placeholder="Entrer nom" name="nom" required> 
+                <input type="text" class="form-control col-lg-6" id="exampleFormControlInput2" placeholder="Entrer nom" name="nom"> 
               </div>
               
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
                 <label for="exampleFormControlInput3" class="form-label col-lg-4" style="display: flex;justify-content:left;">DATE NAISSANCE:</label>
-                <input type="date" class="form-control col-lg-6" id="exampleFormControlInput3" placeholder="Entrer date de naissance" name="date_naissance" required>
+                <input type="date" class="form-control col-lg-6" id="exampleFormControlInput3" placeholder="Entrer date de naissance" name="date_naissance">
               </div>
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
                 <label for="exampleFormControlInput4" class="form-label col-lg-4" style="display: flex;justify-content:left;">ADRESSE:</label>
-                <input type="text" class="form-control col-lg-6" id="exampleFormControlInput4" placeholder="Entrer l'adresse" name="adresse" required>
+                <input type="text" class="form-control col-lg-6" id="exampleFormControlInput4" placeholder="Entrer l'adresse" name="adresse">
               </div> 
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
                 <label for="exampleFormControlInput5" class="form-label col-lg-4" style="display: flex;justify-content:left;">SEXE:</label>
@@ -64,7 +64,7 @@
               </div>
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
                   <label for="exampleFormControlInput6" class="form-label col-lg-4" style="display: flex;justify-content:left;">NATIONALITE:</label>
-                  <input type="text" class="form-control col-lg-6" id="exampleFormControlInput6" placeholder="Entrer nationalité" name="nationalite" required>
+                  <input type="text" class="form-control col-lg-6" id="exampleFormControlInput6" placeholder="Entrer nationalité" name="nationalite">
               </div>
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
                 <label for="exampleFormControlInput6" class="form-label col-lg-4" style="display: flex;justify-content:left;">NIVEAU:</label>
@@ -94,11 +94,11 @@
               </div>
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
                 <label for="exampleFormControlInput7" class="form-label col-lg-4" style="display: flex;justify-content:left;">NOM TUTEUR:</label>
-                <input type="text" class="form-control col-lg-6" id="exampleFormControlInput7" placeholder="Entrer nom tuteur" name="nom_tuteur" required>
+                <input type="text" class="form-control col-lg-6" id="exampleFormControlInput7" placeholder="Entrer nom tuteur" name="nom_tuteur">
               </div> 
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
                 <label for="exampleFormControlInput8" class="form-label col-lg-4" style="display: flex;justify-content:left;">NUMERO TUTEUR:</label>
-                <input type="number" class="form-control col-lg-6" id="exampleFormControlInput8" placeholder="Entrer numero tuteur" name="numero_tuteur" required>
+                <input type="number" class="form-control col-lg-6" id="exampleFormControlInput8" placeholder="Entrer numero tuteur" name="numero_tuteur">
               </div>
               <div class="col-12 text-center container" style=" display:flex;justify-content:center;">
                   <button class="btn btn-primary" style="width: 300px;" type="submit" name="valider">ENVOYER</button>
@@ -107,6 +107,9 @@
             </form>
         </div>
         </div>
+        <footer class="container-fluid">
+        <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
+    </footer>
         <style>
           #formul{
             border: 2px solid black;
@@ -139,15 +142,11 @@
           h1{
             font-weight:bolder;
           }
-          img{
-            margin-left:150px;
-          }
+        
           
         </style>
  </body>
-  <footer>
-        <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
-    </footer>
+  
     <?php
    /*  if($_GET["err"] == "email"){
       echo "Email invalide";

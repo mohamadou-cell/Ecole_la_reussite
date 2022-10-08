@@ -4,7 +4,7 @@ if(isset($_POST["valider"])){
     {
         if(!empty($_POST["prenom"]) && !empty($_POST["nom"]) && !empty($_POST["date_naissance"]) && !empty($_POST["adresse"]) && !empty($_POST["sexe"]) && !empty($_POST["nationalite"]) && !empty($_POST["niveau"]) && !empty($_POST["classe"]) && !empty($_POST["email"]) && !empty($_POST["nom_tuteur"]) && !empty($_POST["numero_tuteur"])){
             if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == '') {
-                header("Location: Formulaire_inscription.php?err=email");
+                header("Location: inscription_eleve.php?err=email");
                 exit();
               }
             $prenom = $_POST["prenom"];
@@ -50,7 +50,15 @@ if(isset($_POST["valider"])){
             echo "Enregistrement réussi";
         }
         else{
-            echo "Veuillez remplir correctement les champs";
+            if(empty($_POST["prenom"])){
+                echo "Entrer un prénom";
+            }
+            if(empty($_POST["nom"])){
+                echo "Entrer un nom";
+            } 
+            header("Location: inscription_eleve.php?err=email");
+            /* && !empty($_POST["date_naissance"]) && !empty($_POST["adresse"]) && !empty($_POST["sexe"]) && !empty($_POST["nationalite"]) && !empty($_POST["niveau"]) && !empty($_POST["classe"]) && !empty($_POST["email"]) && !empty($_POST["nom_tuteur"]) && !empty($_POST["numero_tuteur"])){ */
+            
         }
     }
 }
