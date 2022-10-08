@@ -33,18 +33,11 @@
                 $nom_tuteur = $data["nom_tuteur"];
                 $numero_tuteur = $data["numero_tuteur"];
                 
-                echo "<input value='$id'><input value='$prenom'><input value='$nom'><input value='$date'><input value='$adresse'><input value='$sexe'><input value='$nationalite'>
-                <input value='$niveau'><input value='$classe'><input value='$email'><input value='$nom_tuteur'><input value='$numero_tuteur'>";
-                echo "<input onclick='return confirm(\"Êtes-vous sûr de vouloir modifier\")' class='btn btn-warning' value='Modifier' type='submit'>";
+                echo "<form action='afficher_tab_eleve.php' method='post'><input value='$id' name='id'><input value='$prenom' name='prenom'><input value='$nom' name='nom'><input value='$date' name='date_naissance'><input value='$adresse' name='adresse'><input value='$sexe' name='sexe'><input value='$nationalite' name='nationalite'>
+                <input value='$niveau' name='niveau'><input value='$classe' name='classe'><input value='$email' name='email'><input value='$nom_tuteur' name='nom_tuteur'><input value='$numero_tuteur' name='numero_tuteur'>
+                <input onclick='return confirm(\"Êtes-vous sûr de vouloir modifier\")' class='btn btn-warning' value='Modifier' type='submit' name='valide'></form>";
                 
-                
-
-                if(!empty($prenom) && !empty($nom) && !empty($date) && !empty($adresse) && !empty($sexe) && !empty($nationalite) && !empty($niveau) && !empty($classe) && !empty($email)
-                && !empty($nom_tuteur) && !empty($numero_tuteur)){
-                    include("Connection_dba.php");
-                    $list = "UPDATE inscription SET prenom = '$prenom', nom = '$nom', date_naissance = '$date', adresse = '$adresse', sexe = '$sexe', nationalite = '$nationalite', niveau = '$niveau', classe = '$classe', email = '$email', nom_tuteur = '$nom_tuteur', numero_tuteur = '$numero_tuteur' WHERE id_ins = $id";
-                    $dbco->exec($list);
-                    
+        
                     
                     
                     
@@ -58,7 +51,7 @@
         
     
 } 
-}      
+     
 
 ?>
 </body>

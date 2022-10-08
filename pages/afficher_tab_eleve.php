@@ -108,7 +108,37 @@ if(isset($_POST["valider"])){
                 }
 ?>
         </table>
-
+<?php
+if(isset($_POST["valide"])){
+    if(isset($_POST["id"]) && isset($_POST["prenom"]) && isset($_POST["nom"]) && isset($_POST["date_naissance"]) && isset($_POST["adresse"]) && isset($_POST["sexe"]) && isset($_POST["nationalite"]) && isset($_POST["niveau"]) && isset($_POST["classe"])  && isset($_POST["email"]) && isset($_POST["nom_tuteur"]) && isset($_POST["numero_tuteur"]))
+    {
+        if(!empty($_POST["prenom"]) && !empty($_POST["nom"]) && !empty($_POST["date_naissance"]) && !empty($_POST["adresse"]) && !empty($_POST["sexe"]) && !empty($_POST["nationalite"]) && !empty($_POST["niveau"]) && !empty($_POST["classe"]) && !empty($_POST["email"]) && !empty($_POST["nom_tuteur"]) && !empty($_POST["numero_tuteur"])){
+            if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == '') {
+                header("Location: Formulaire_inscription.php?err=email");
+                exit();
+              }
+            $id = $_POST["id"];
+            $prenom = $_POST["prenom"];
+            $nom = $_POST["nom"];
+            $date = $_POST["date_naissance"];
+            $adresse = $_POST["adresse"];
+            $sexe = $_POST["sexe"];
+            $nationalite = $_POST["nationalite"];
+            $niveau = $_POST["niveau"];
+            $classe = $_POST["classe"];
+            $email = $_POST["email"];
+            $nom_tuteur = $_POST["nom_tuteur"];
+            $numero_tuteur = $_POST["numero_tuteur"];
+            
+                    include("Connection_dba.php");
+                    $list = "UPDATE inscription SET id_ins = '$id', prenom = '$prenom', nom = '$nom', date_naissance = '$date', adresse = '$adresse', sexe = '$sexe', nationalite = '$nationalite', niveau = '$niveau', classe = '$classe', email = '$email', nom_tuteur = '$nom_tuteur', numero_tuteur = '$numero_tuteur' WHERE id_ins = $id";
+                    $dbco->exec($list);
+                    echo "Modification réussie";
+                    
+        }
+    }
+}       
+?>
 
     </div>
 </body>
