@@ -48,7 +48,7 @@
       <form class="d-flex" role="search">
      <!--  <button class="btn btn-outline-success" type="submit">Inscription</button>
       <ul><div></div></ul> -->
-        <button class="btn btn-outline-success" type="submit"><a href="">Historique</a> </button>
+        <button class="btn btn-outline-success" type="submit"><a href="Emplois_du_temps.php">Emlpoidutemps</a> </button>
       </form>
       
     </div>
@@ -64,8 +64,8 @@
 
         </div> 
         
-<div class="container-fluid" style="margin-top: 10%;">
-     <div style="display:flex;justify-content:center"> <h1>Les Conditions D'admission</h1></div>
+<div class="container" style="margin-top: 10%;">
+     <div style="display:flex;justify-content:center;"> <h1>Les Conditions D'admission</h1></div>
       <table class="table table-dark container">
         <thead>
           <tr>
@@ -103,18 +103,19 @@
       </table>
     
    
-    
+   
     <div class="p-3 mb-2 bg-dark text-white container" style="margin-top:10%;
 text-align: center;" >Les 
     inscriptions de l'année 2021-2022 se tiendrent du 12 septembre au 2 decombre 2022 </div>
-    
-    
+   
+    <div class="contenair-fluid">
     <footer style="width: 100%;">
         <p>Copyright &copy; 2022 Groupe :</p>
     </footer>
     </div>
-   
-       <style>
+    </div>
+    
+<style>
 
     .logo{
         display: flex;
