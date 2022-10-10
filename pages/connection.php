@@ -83,21 +83,8 @@
             </div>
             <div class="form-group">
                 <label class="form-label" for="profil">Profil</label>
-                <input class="form-control" type="text" id="profil" name="profil">
-                <!-- <select class="form-select" aria-label="Default select example" name="profil">
-                <option value=""></option>
-                    <option value="">Administrateur</option>                      
-                    <option value="">Secretaire</option>
-                    <option value="">Professeur</option>
-                    <option value="">Comptable</option>
-                    <option value="">Eleve</option> -->
-                    
-                    </select>
-                
-                
-                    
+                <input class="form-control" type="text" id="profil" name="profil">   
             </div>
-
             <div class="form-group">
                 <label class="form-label" for="password">Mot de passe</label>
                 <input class="form-control" type="password" id="passwords" name="password">
@@ -105,10 +92,11 @@
             <div class="form-group1">
             <input class="btn btn-success w-100" type="submit" value="SE CONNECTER" name="verif">
             </div>
+            <div>
             <?php if(!empty($message)); {?>
-            <div style="display:flex; color:red"> <?php echo $message;  ?> </div> 
+            <div style="display:flex; color:red;flex-direction:column"> <?php echo $message;  ?> </div> 
             <?php }?> 
-        
+            </div>    
         </form>
 
         
