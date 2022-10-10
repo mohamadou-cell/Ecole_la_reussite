@@ -83,7 +83,6 @@ $message3="";
           <title>Document</title>
       </head>
   <body>  
-    <div class="joli" style="display:flex;"></div>
             <div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;background-color:#0c82d1;display:flex;align-items:center;" >
                 <div class="container-fluid"><img src="images.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
                     <div class="menu" style="background-color:#0c82d1;">
