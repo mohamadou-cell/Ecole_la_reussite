@@ -7,4 +7,5 @@ $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $dbco->exec($sql);  */
 /* echo 'Connection réussie !'; */ } 
 catch(PDOException $e){ echo "Erreur : " . $e->getMessage(); } 
+
 ?>
