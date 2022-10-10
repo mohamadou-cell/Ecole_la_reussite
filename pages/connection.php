@@ -83,9 +83,8 @@
             </div>
             <div class="form-group">
                 <label class="form-label" for="profil">Profil</label>
-                <input class="form-control" type="text" id="profil" name="profil">
+                <input class="form-control" type="text" id="profil" name="profil">   
             </div>
-
             <div class="form-group">
                 <label class="form-label" for="password">Mot de passe</label>
                 <input class="form-control" type="password" id="passwords" name="password">
@@ -93,12 +92,12 @@
             <div class="form-group1">
             <input class="btn btn-success w-100" type="submit" value="SE CONNECTER" name="verif">
             </div>
-            <div> 
-                    <?php if(!empty($message)); {?>
-                    <div style="display:flex; color:red;flex-direction:column;"> <?php echo $message;  ?> </div> 
-                    <?php }?> 
-                </div>
-        
+
+            <div>
+            <?php if(!empty($message)); {?>
+            <div style="display:flex; color:red;flex-direction:column"> <?php echo $message;  ?> </div> 
+            <?php }?> 
+            </div>    
         </form>
 
         
