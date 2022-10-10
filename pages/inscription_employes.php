@@ -32,10 +32,11 @@ $message3="";
         
           if(empty($message)){
             
-            
-                if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == '') {
 
-                  $message1.="<label>Veuillez entrer un email correct!</label>";
+            /* if(!empty($_POST["prenom"]) && !empty($_POST["nom"]) && !empty($_POST["adresse"]) && !empty($_POST["email"]) && !empty($_POST["date_naissance"]) && !empty($_POST["fonction"]) && !empty($_POST["nationalite"]) && !empty($_POST["sexe"]) && !empty($_POST["telephone"])){ */
+                if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == '') {
+                    /* header("Location: inscription_employes.php?err=email");*/
+                    echo "Veuillez entrer un email correct";
                     exit();
                   }  
                 
@@ -44,6 +45,7 @@ $message3="";
                 $sth->execute();
                 $res = $sth->fetchAll(PDO::FETCH_ASSOC); 
                if(count($res) == 0){  
+
                 $sth = $dbco->prepare(" INSERT INTO employes(prenom,nom,adresse,email,date_naissance,fonction,nationalite,sexe,telephone)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) "); 
     
@@ -57,6 +59,7 @@ $message3="";
                 $sth->bindValue(8, $sexe);
                 $sth->bindValue(9, $telephone);
                 $sth->execute();
+
                 $message2.="<label>Enregistrement valide !</label>";
               }
               else{
@@ -70,7 +73,6 @@ $message3="";
         }
     }
     ?>
- 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -83,12 +85,17 @@ $message3="";
           <title>Document</title>
       </head>
   <body>  
+    <div class="joli" style="display:flex;"></div>
             <div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;background-color:#0c82d1;display:flex;align-items:center;" >
                 <div class="container-fluid"><img src="images.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
                     <div class="menu" style="background-color:#0c82d1;">
                         <nav class="navbar navbar-expand-lg " style="background-color:#0c82d1;">
                             <div class="container-fluid" style="gap:15px;float:right;">
+
                             <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
+
+                            <!-- <button class="btn btn-outline-success" type="submit"><a href="connection.php"> Connection</a></button> -->
+
                               <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Deconnection</a></button> 
                           </div>
                       </nav>
@@ -97,11 +104,13 @@ $message3="";
         <div class="container-fluid" style="display: flex;justify-content:center;">
         <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">INSCRIPTION EMPLOYES </h1>
         </div >
+
         <div style="display:flex;justify-content:center;">
            <?php if(!empty($message2)); {?>
             <div style="display:flex;justify-content:center; color:blue;flex-direction:column;font-weight:bold;font-size:large;"> <?php echo $message2;  ?> </div> 
             <?php }?>
     </div> 
+
         <div id="formule"  style="display:flex; justify-content:center;" class="container-fluid">
           <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" class="container">
               
@@ -113,7 +122,8 @@ $message3="";
                 </div>
                     <div class="mb-3 row form-inline" >
                       <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">PRENOM:</label>
-                      <input type="text" name="prenom"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre prenom">
+                      <input type="text" name="prenom"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre prenom" required>
+
                   </div>
                     <div class="mb-3 row form-inline">
                       <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">NOM:</label>
@@ -127,11 +137,13 @@ $message3="";
                     <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">EMAIL:</label>
                     <input type="text" name="email"  class="form-control col-lg-6" id="exampleFormControlInput1"  placeholder="votre email">
                     </div>
+
                     <div style="display:flex;justify-content:center;">
                       <?php if(!empty($message1)); {?>
                             <div style="display:flex;justify-content:center; color:red;flex-direction:column;"> <?php echo $message1;  ?> </div> 
                             <?php }?>
                     </div> 
+
                     <div class="mb-3 row form-inline">
                     <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3 ">DATE_NAISSANCE:</label>
                     <input type="date" name="date_naissance"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre date de naissance">
@@ -168,7 +180,9 @@ $message3="";
                       <button class="btn btn-primary" type="submit" name="valider">ENVOYER</button>
                   </div> 
                   <?php if(!empty($message)); {?>
+
                 <div style="display:flex; color:red;flex-direction:column;"> <?php echo $message;  ?> </div> 
+
                 <?php }?>  
               </form>
             </div>
@@ -180,6 +194,7 @@ $message3="";
             #formul{
                 border: 2px solid black;
                 border-radius:1rem;
+
                 background-color: ghostwhite;
               padding: 30px;
               }
@@ -206,13 +221,16 @@ $message3="";
               h1{
                 font-weight:bolder;
               }
-             
+
               
             </style>
   </body>
       <footer>
             <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
         </footer>
+
     
     
 </html>
+
+   
