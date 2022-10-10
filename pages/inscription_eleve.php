@@ -114,8 +114,6 @@
           #formul{
             border: 2px solid black;
             border-radius:1rem;
-            /* margin-left:500px;
-            margin-right:500px; */
             background-color: ghostwhite;
 
            padding: 30px;
@@ -147,11 +145,7 @@
         </style>
  </body>
   
-    <?php
-   /*  if($_GET["err"] == "email"){
-      echo "Email invalide";
-  } */
-    ?>
+
     
 </body>
 </html>
