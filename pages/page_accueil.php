@@ -14,90 +14,72 @@
    
 </head>
 <body>
+   <!--le menu -->
     <div class="joli" style="display:flex;"></div>
     <div class="logo" style="background-color:#f8f9fa;position:fixed;width:100%;" >
-        <div><img src="images/images.jpeg" data-toggle="modal" data-target="#exampleModal"></div>
-        <div class="menu">
-        <nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-  <button class="btn btn-outline-success" type="submit"><a href="page_accueil.php"> Accueile</a></button>
-    <button class="navbar-toggler" type="button"
-     data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+         <div><img src="images/images.jpeg" data-toggle="modal" data-target="#exampleModal"></div>
+           <div class="menu">
+ <nav class="navbar navbar-expand-lg bg-light">
+         <div class="container-fluid">
+       <button class="btn btn-outline-success" type="submit"><a href="page_accueil.php"> Accueile</a></button>
+           <button class="navbar-toggler" type="button"
+           data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <ul><div>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul><div>
 
-        </div>
-        </ul>
-        <button class="btn btn-outline-success" type="submit"><a href="">Actualité</a> </button>
-          <ul class="dropdown-menu">
+              </div>
+              </ul>
+              <button class="btn btn-outline-success" type="submit"><a href="">Actualité</a> </button>
+             <ul class="dropdown-menu">
            
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-        <ul>
-            <div>
-            </div>
-        </ul>
-        
-        <button class="btn btn-outline-success" type="submit"><a href="Admissiblite.php">Admissiblité</a> </button>
-        <ul><div></div></ul>
-      </ul>
-      <form class="d-flex" role="search">
-     <!--  <button class="btn btn-outline-success" type="submit">Inscription</button>
-      <ul><div></div></ul> -->
-        <button class="btn btn-outline-success" type="submit"><a href="">Historique</a> </button>
-      </form>
+                   <ul><div> </div></ul>
+         <button class="btn btn-outline-success" type="submit"><a href="Admissiblite.php">Admissiblité</a> </button>
+            <ul><div></div></ul>
+            </ul>
+        <form class="d-flex" role="search">
+          <button class="btn btn-outline-success" type="submit"><a href="Emplois_du_temps.php">Emplois.du.temps</a> </button>
+        </form>
       
-    </div>
-  </div>
-  <div class="conect" style="margin-left: 10%;display: flex;gap:10px;">
+       </div>
+     </div>
+    <div class="conect" style="margin-left: 10%;display: flex;gap:10px;">
       <button class="btn btn-outline-success" type="submit"><a href="inscription_employes.php">Incription</a></button>
-        
-        <button class="btn btn-outline-success" type="submit"><a href="connection.php"> Connection</a></button>
-        </div>
+      <button class="btn btn-outline-success" type="submit"><a href="connection.php"> Connection</a></button>
+      </div>
 </nav>
-
-        </div>
-
-        </div>  
+        </div></div>  
 </div>
-<div class="corps"style="height: 1000px;">
-  <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> -->
+  <div class="corps"style="height: 1000px;">
+    <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> -->
   <div class="bg-image" style=" background-image: url('images/pexels-roberto-nickson-2559941-1.jpg');height:100%;">
- 
   <div class="description" style="background-color: #f5f5f5;width:20%;margin-top:7%;">
-    <div>
-      <ul>   
-    <h3><i class="fa-sharp fa-solid fa-graduation-cap"></i> ecole privé</h3>  
-           <h1> LA REUSSIE</h1>
-    
-    </ul>
-    <ul>
-        
-           Enségnement Général :   <h2>Primaire & Secondaire </h2>
-        
-        <p>serie :  S/L De la <h3>CP à la TÉRMINALE</h3></p>
-    </ul>
-    <ul>
-        
-           <h3><i class="fa-sharp fa-solid fa-location-dot"></i>  Keur Mbaye Fall </h3>
-      
-        
-       <h3><i class="fa-sharp fa-solid fa-envelope-circle-check"></i>  ecol22@gmail.com </h3> 
-        
-        <h3>
-        <i class="fa-sharp fa-solid fa-phone-volume"></i> 33 445 44 44</h3>
-        
-    </ul>
-    <ul>
-    <h3><i class="fa-sharp fa-solid fa-book-bookmark"></i>  la culte de l'excélance</h3>
-    </ul>
+    <!--description de l'ecole-->
+            <div>
+              <ul>   
+                <h3><i class="fa-sharp fa-solid fa-graduation-cap"></i> ecole privé</h3>  
+                  <h1> LA REUSSIE</h1>
+                     </ul>
+                         <ul>
+                           Enségnement Général :   <h2>Primaire & Secondaire </h2>
+                           <p>serie :  S/L De la <h3>CP à la TÉRMINALE</h3></p>
+                           </ul>
+                      <ul>
+                      <h3><i class="fa-sharp fa-solid fa-location-dot"></i>  Keur Mbaye Fall </h3>
+           <h3><i class="fa-sharp fa-solid fa-envelope-circle-check"></i>  ecol22@gmail.com </h3> 
+        <h3><i class="fa-sharp fa-solid fa-phone-volume"></i> 33 445 44 44</h3>
+        </ul>
+          <ul>
+            <h3><i class="fa-sharp fa-solid fa-book-bookmark"></i>  la culte de l'excélance</h3>
+          </ul>
   
     </div>
     
