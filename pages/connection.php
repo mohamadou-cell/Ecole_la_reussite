@@ -11,9 +11,9 @@
   {
       if(isset($_POST["nom_utilisateur"]) && isset($_POST["profil"]) && isset($_POST["password"]))
       {
-          if(empty($_POST["nom_utilisateur"])) $message.= "<li> Entrer un nom_d'utilisateur !</li>";
-          if(empty($_POST["profil"])) $message.="<li>Choisisser un profil !</li>";
-          if(empty($_POST["password"])) $message.= "<li>Entrer mot_de_passe !</li>";
+          if(empty($_POST["nom_utilisateur"])) $message.= "<label> Entrer un nom_d'utilisateur !</label>";
+          if(empty($_POST["profil"])) $message.="<label>Entrer un profil !</label>";
+          if(empty($_POST["password"])) $message.= "<label>Entrer mot_de_passe !</label>";
          
            if(empty($message)){
             $user = trim($_POST['nom_utilisateur']);
@@ -92,6 +92,7 @@
             <div class="form-group1">
             <input class="btn btn-success w-100" type="submit" value="SE CONNECTER" name="verif">
             </div>
+
             <div>
             <?php if(!empty($message)); {?>
             <div style="display:flex; color:red;flex-direction:column"> <?php echo $message;  ?> </div> 
