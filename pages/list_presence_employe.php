@@ -27,9 +27,9 @@
                 $archive = $data["archive"];
                 if($archive==0){
                 echo "<tr><td>$id</td><td>$prenom</td><td>$nom</td><td>$adresse</td>";
-                echo "<td style='display:flex;'>";
-                echo "<a href='list_presence_employe.php?id_ab=$id' onclick='return confirm(\"Êtes-vous sûr d'ajouter une absence\")' class='btn btn-warning'>Ajouter</a>";
-                echo "<a href='list_presence_employe.php?id=$id' onclick='return confirm(\"Êtes-vous sûr d'ajouter un retard\")' class='btn btn-danger'>Modifier</a>";
+                echo "<td style='display:flex;justify-content:center;gap: 10px;'>";
+                echo "<a href='list_presence_employe.php?id_ab=$id' onclick='return confirm(\"Êtes-vous sûr d'ajouter une absence\")' class='btn btn-warning'>Absence</a>";
+                echo "<a href='list_presence_employe.php?id=$id' onclick='return confirm(\"Êtes-vous sûr d'ajouter un retard\")' class='btn btn-danger'>Retard</a>";
                 echo "</td";
                 echo "</tr>";
                 }

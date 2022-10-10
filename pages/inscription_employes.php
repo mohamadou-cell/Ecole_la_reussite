@@ -188,9 +188,7 @@ $message3="";
             </div>
             </div>
             <style>
-              body{
               
-              }
             #formul{
                 border: 2px solid black;
                 border-radius:1rem;

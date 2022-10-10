@@ -10,8 +10,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 <body>
+<div class="joli" style="display:flex;"></div>
+        <div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;background-color:#0c82d1;display:flex;align-items:center;" >
+            <div class="container-fluid"><img src="../images/image.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
+                <div class="menu" style="background-color:#0c82d1;">
+                    <nav class="navbar navbar-expand-lg " style="background-color:#0c82d1;">
+                        <div class="container-fluid" style="gap:15px;float:right;">
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="">Actualité</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;width: 150px;"><a href="Emplois_du_temps.php">Emploi du temps</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="inscription_employes.php">Inscription</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Connection</a></button>
+                      </div>
+                   </nav>
+             </div>
+        </div> 
 
-<div class="joli" style="display:flex;">
+<!-- <div class="joli" style="display:flex;">
     <div class="logo" style="background-color:#f8f9fa;position:fixed;width:100%;" >
         <div><img src="images/images.jpeg" data-toggle="modal" data-target="#exampleModal"></div>
         <div class="menu">
@@ -46,8 +61,8 @@
         <ul><div></div></ul>
       </ul>
       <form class="d-flex" role="search">
-     <!--  <button class="btn btn-outline-success" type="submit">Inscription</button>
-      <ul><div></div></ul> -->
+       <button class="btn btn-outline-success" type="submit">Inscription</button>
+      <ul><div></div></ul> 
         <button class="btn btn-outline-success" type="submit"><a href="Emplois_du_temps.php">Emlpoidutemps</a> </button>
       </form>
       
@@ -62,7 +77,7 @@
 
         </div>
 
-        </div> 
+        </div>  -->
         
 <div class="container" style="margin-top: 10%;">
      <div style="display:flex;justify-content:center;"> <h1>Les Conditions D'admission</h1></div>
@@ -107,13 +122,13 @@
     <div class="p-3 mb-2 bg-dark text-white container" style="margin-top:10%;
 text-align: center;" >Les 
     inscriptions de l'année 2021-2022 se tiendrent du 12 septembre au 2 decombre 2022 </div>
-   
-    <div class="contenair-fluid">
-    <footer style="width: 100%;">
-        <p>Copyright &copy; 2022 Groupe :</p>
+    </div>
+  
+    <footer class="container-fluid fixed-bottom">
+        <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
     </footer>
-    </div>
-    </div>
+  
+    
     
 <style>
 
@@ -126,11 +141,12 @@ text-align: center;" >Les
         margin-left: 250px;
     }
      footer {
-      background-color: #0c82d1;
-     text-align: center;
-     padding: 50px;
-     color: #fff;
-     margin-top:120px;
+      background-color: black;
+            text-align: center;
+            padding: 50px;
+            color: #fff;
+            margin-top:120px;
+            height:50px;
  
      }
    

@@ -15,13 +15,28 @@
 </head>
 <body>
    <!--le menu -->
-    <div class="joli" style="display:flex;"></div>
-    <div class="logo" style="background-color:#f8f9fa;position:fixed;width:100%;" >
+   <div class="joli" style="display:flex;"></div>
+        <div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;background-color:#0c82d1;display:flex;align-items:center;" >
+            <div class="container-fluid"><img src="../images/image.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
+                <div class="menu" style="background-color:#0c82d1;">
+                    <nav class="navbar navbar-expand-lg " style="background-color:#0c82d1;">
+                        <div class="container-fluid" style="gap:15px;float:right;">
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="">Actualité</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;width: 150px;"><a href="Admissiblite.php">Admissibilité</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="inscription_employes.php">Inscription</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Connection</a></button>
+                      </div>
+                   </nav>
+             </div>
+        </div> 
+   <!--  <div class="joli" style="display:flex;"></div>
+    <div class="logo" style="background-color:#0c82d1;position:fixed;width:100%;" >
          <div><img src="images/images.jpeg" data-toggle="modal" data-target="#exampleModal"></div>
            <div class="menu">
- <nav class="navbar navbar-expand-lg bg-light">
+ <nav class="navbar navbar-expand-lg">
          <div class="container-fluid">
-       <button class="btn btn-outline-success" type="submit"><a href="page_accueil.php"> Accueile</a></button>
+       <button class="btn btn-outline-success" type="submit"><a href="page_accueil.php"> Accueil</a></button>
            <button class="navbar-toggler" type="button"
            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +61,7 @@
             <ul><div></div></ul>
             </ul>
         <form class="d-flex" role="search">
-          <button class="btn btn-outline-success" type="submit"><a href="Emplois_du_temps.php">Emplois.du.temps</a> </button>
+          <button class="btn btn-outline-success" type="submit" style="width: 170px;"><a href="Emplois_du_temps.php">Emplois du temps</a> </button>
         </form>
       
        </div>
@@ -57,11 +72,11 @@
       </div>
 </nav>
         </div></div>  
-</div>
+</div> -->
   <div class="corps"style="height: 1000px;">
     <!-- <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> -->
   <div class="bg-image" style=" background-image: url('images/pexels-roberto-nickson-2559941-1.jpg');height:100%;">
-  <div class="description" style="background-color: #f5f5f5;width:20%;margin-top:7%;">
+  <div class="description" style="background-color: #f5f5f5;width:20%;margin-top:8.2%;">
     <!--description de l'ecole-->
             <div>
               <ul>   
