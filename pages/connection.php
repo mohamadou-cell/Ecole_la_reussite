@@ -85,7 +85,6 @@
                 <label class="form-label" for="profil">Profil</label>
                 <input class="form-control" type="text" id="profil" name="profil">   
             </div>
-
             <div class="form-group">
                 <label class="form-label" for="password">Mot de passe</label>
                 <input class="form-control" type="password" id="passwords" name="password">
@@ -97,8 +96,7 @@
             <?php if(!empty($message)); {?>
             <div style="display:flex; color:red;flex-direction:column"> <?php echo $message;  ?> </div> 
             <?php }?> 
-            </div>
-        
+            </div>    
         </form>
 
         
