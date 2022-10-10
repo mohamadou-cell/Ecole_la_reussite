@@ -1,3 +1,62 @@
+<?php
+ ini_set("display_errors", "1");
+ error_reporting(E_ALL);
+     $message=""; 
+     @$user=$_POST["nom_utilisateur"];
+     @$profil = $_POST["profil"];
+     @$pass = $_POST["password"];
+ 
+ 
+  if(isset($_POST["verif"]))
+  {
+      if(isset($_POST["nom_utilisateur"]) && isset($_POST["profil"]) && isset($_POST["password"]))
+      {
+          if(empty($_POST["nom_utilisateur"])) $message.= "<label> Entrer un nom_d'utilisateur !</label>";
+          if(empty($_POST["profil"])) $message.="<label>Entrer un profil !</label>";
+          if(empty($_POST["password"])) $message.= "<label>Entrer mot_de_passe !</label>";
+         
+           if(empty($message)){
+            $user = trim($_POST['nom_utilisateur']);
+            $profil = trim($_POST['profil']);
+            $pass = trim($_POST['password']);
+             
+            
+            include('Connection_dba.php');
+            
+            try{
+            $sth = $dbco->prepare(" SELECT * FROM comptes WHERE nom_utilisateur = '".$user."' AND profil = '".$profil."' AND mot_de_passe = '".$pass."' "); 
+            $sth->execute();
+            $res = $sth->fetchAll(PDO::FETCH_ASSOC); 
+            if(count($res) == 0){        
+                echo "Vous n'êtes pas dans la base de données, inscrivez-vous";
+                }
+            else
+            {
+                if($profil == 'Administrateur'){
+                    header("Location:accueil_admin.php");
+                }
+                else if($profil == 'Secretaire'){
+                    header("Location:accueil_secretaire.php");
+                }
+                else if($profil == 'Professeur'){
+                    header("Location:accueil_professeur.php");
+                }
+                else if($profil == 'Comptable'){
+                    header("Location:accueil_comptable.php");
+                }
+                else if($profil == 'Eleve'){
+                    header("Location:accueil_eleve.php");
+                }
+                
+            }
+            }
+            catch(PDOException $e){ echo ("Erreur:".$e->getMessage());}
+           
+             }
+          }
+         }       
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,23 +76,23 @@
     <div class="login">
        
         <h1 class="text-center">Connection</h1>
-        <form action="Connection_dba.php" method="post">
+        <form action="" method="post">
             <div class="form-group">
                 <label class="form-label" for="name">Nom d'utilisateur</label>
-                <input class="form-control" type="text" id="name" required>
+                <input class="form-control" type="text" id="name" name="nom_utilisateur">
             </div>
             <div class="form-group">
                 <label class="form-label" for="profil">Profil</label>
-                <select class="form-select" aria-label="Default select example">
+                <input class="form-control" type="text" id="profil" name="profil">
+                <!-- <select class="form-select" aria-label="Default select example" name="profil">
                 <option value=""></option>
                     <option value="">Administrateur</option>                      
                     <option value="">Secretaire</option>
                     <option value="">Professeur</option>
                     <option value="">Comptable</option>
                     <option value="">Eleve</option>
-                    <option value="">Surveillant</option>
                     
-                    </select>
+                    </select> -->
                 
                 
                     
@@ -41,19 +100,23 @@
 
             <div class="form-group">
                 <label class="form-label" for="password">Mot de passe</label>
-                <input class="form-control" type="password" id="passwords" required>
+                <input class="form-control" type="password" id="passwords" name="password">
             </div>
             <div class="form-group1">
-            <input class="btn btn-success w-100" type="submit" value="Se connecter">
-        </div>
+            <input class="btn btn-success w-100" type="submit" value="SE CONNECTER" name="verif">
+            </div>
+            <div> 
+                    <?php if(!empty($message)); {?>
+                    <div style="display:flex; color:red;flex-direction:column;"> <?php echo $message;  ?> </div> 
+                    <?php }?> 
+                </div>
+        
         </form>
+
         
     
 </body>
-<?php
-include('Connection_dba.php');
-$prenom
-?>
+
 <style>
     *{
     margin:0;
@@ -97,6 +160,7 @@ body{
 }
 
 </style>
+
 
 
 </html>
