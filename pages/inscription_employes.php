@@ -3,6 +3,9 @@
 ini_set("display_errors", "1");
 error_reporting(E_ALL);
 $message=""; 
+$message1=""; 
+$message2="";
+$message3=""; 
 @$prenom = $_POST["prenom"];
 @ $nom = $_POST["nom"];
 @ $adresse = $_POST["adresse"];
@@ -29,14 +32,18 @@ $message="";
         
           if(empty($message)){
             
-            /* if(!empty($_POST["prenom"]) && !empty($_POST["nom"]) && !empty($_POST["adresse"]) && !empty($_POST["email"]) && !empty($_POST["date_naissance"]) && !empty($_POST["fonction"]) && !empty($_POST["nationalite"]) && !empty($_POST["sexe"]) && !empty($_POST["telephone"])){ */
+            
                 if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == '') {
-                    /* header("Location: inscription_employes.php?err=email");*/
-                    echo "Veuillez entrer un email correct";
+
+                  $message1.="<label>Veuillez entrer un email correct!</label>";
                     exit();
                   }  
                 
                 include("Connection_dba.php");
+                $sth = $dbco->prepare(" SELECT * FROM employes WHERE email = '".$email."'"); 
+                $sth->execute();
+                $res = $sth->fetchAll(PDO::FETCH_ASSOC); 
+               if(count($res) == 0){  
                 $sth = $dbco->prepare(" INSERT INTO employes(prenom,nom,adresse,email,date_naissance,fonction,nationalite,sexe,telephone)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) "); 
     
@@ -50,26 +57,20 @@ $message="";
                 $sth->bindValue(8, $sexe);
                 $sth->bindValue(9, $telephone);
                 $sth->execute();
-                 /* echo "Enregistrement réussi";  */
+                $message2.="<label>Enregistrement valide !</label>";
+              }
+              else{
+                $message2.="<label>Enregistrement invalide !</label>";
+                $message3.="<label>Cet email existe déjà !</label>";
+
+              }
+                
             }
-            else{
-              /*   echo "Veuillez remplir correctement les champs"; */
-            }
+            
         }
     }
     ?>
-    <?php
-
-$username = $_POST['username'];
-$stmt = $pdo->prepare("SELECT * FROM users WHERE username=?");
-$stmt->execute([$username]); 
-$user = $stmt->fetch();
-if ($user) {
-    // le nom d'utilisateur existe déjà
-} else {
-    // le nom d'utilisateur n'existe pas
-} 
-?>
+ 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +89,7 @@ if ($user) {
                     <div class="menu" style="background-color:#0c82d1;">
                         <nav class="navbar navbar-expand-lg " style="background-color:#0c82d1;">
                             <div class="container-fluid" style="gap:15px;float:right;">
-                            <!-- <button class="btn btn-outline-success" type="submit"><a href="connection.php"> Connection</a></button> -->
+                            <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
                               <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Deconnection</a></button> 
                           </div>
                       </nav>
@@ -97,13 +98,23 @@ if ($user) {
         <div class="container-fluid" style="display: flex;justify-content:center;">
         <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">INSCRIPTION EMPLOYES </h1>
         </div >
+        <div style="display:flex;justify-content:center;">
+           <?php if(!empty($message2)); {?>
+            <div style="display:flex;justify-content:center; color:blue;flex-direction:column;font-weight:bold;font-size:large;"> <?php echo $message2;  ?> </div> 
+            <?php }?>
+    </div> 
         <div id="formule"  style="display:flex; justify-content:center;" class="container-fluid">
           <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" class="container">
               
                 <form action="" method="post" style="width:80%; ">
+                <div style="display:flex;justify-content:center;">
+                  <?php if(!empty($message3)); {?>
+                    <div style="display:flex;justify-content:center; color:blue;flex-direction:column;font-weight:bold;font-size:large;"> <?php echo $message3;  ?> </div> 
+                    <?php }?>
+                </div>
                     <div class="mb-3 row form-inline" >
                       <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">PRENOM:</label>
-                      <input type="text" name="prenom"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre prenom" required>
+                      <input type="text" name="prenom"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre prenom">
                   </div>
                     <div class="mb-3 row form-inline">
                       <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">NOM:</label>
@@ -117,6 +128,11 @@ if ($user) {
                     <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">EMAIL:</label>
                     <input type="text" name="email"  class="form-control col-lg-6" id="exampleFormControlInput1"  placeholder="votre email">
                     </div>
+                    <div style="display:flex;justify-content:center;">
+                      <?php if(!empty($message1)); {?>
+                            <div style="display:flex;justify-content:center; color:red;flex-direction:column;"> <?php echo $message1;  ?> </div> 
+                            <?php }?>
+                    </div> 
                     <div class="mb-3 row form-inline">
                     <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3 ">DATE_NAISSANCE:</label>
                     <input type="date" name="date_naissance"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre date de naissance">
@@ -153,7 +169,7 @@ if ($user) {
                       <button class="btn btn-primary" type="submit" name="valider">ENVOYER</button>
                   </div> 
                   <?php if(!empty($message)); {?>
-                <div style="display:flex; color:red"> <?php echo $message;  ?> </div> 
+                <div style="display:flex; color:red;flex-direction:column;"> <?php echo $message;  ?> </div> 
                 <?php }?>  
               </form>
             </div>
@@ -165,8 +181,6 @@ if ($user) {
             #formul{
                 border: 2px solid black;
                 border-radius:1rem;
-                /* margin-left:500px;
-                margin-right:500px;  */
                 background-color: ghostwhite;
               padding: 30px;
               }
@@ -193,19 +207,13 @@ if ($user) {
               h1{
                 font-weight:bolder;
               }
-              img{
-               /*  margin-left:80px; */
-              }
+             
               
             </style>
   </body>
       <footer>
             <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
         </footer>
-    <?php
-    /* if($_GET["err"] == "email"){
-      echo "Email invalide"; 
-  }*/
-    ?>
     
-</html> 
+    
+</html>

@@ -2,41 +2,51 @@
 ini_set("display_errors", "1");
 error_reporting(E_ALL);
     $message=""; 
+    $message1="";
+    $message2="";
+    $message3="";
     @$nom_utilisateur=$_POST["nom_d'utilisateur"];
     @$profil = $_POST["profil"];
     @$mot_de_passe = $_POST["mot_passe"];
-    @$id_employes = $_POST["matricule_eleves"];
-    @$id_ins= $_POST["matricule_employes"];
+    @$id_employe= $_POST["matricule_employes"];
 
 
  if(isset($_POST["valider"]))
  {
-     if(isset($_POST["nom_d'utilisateur"]) && isset($_POST["profil"]) && isset($_POST["mot_passe"]) && isset($_POST["matricule_eleves"]) && isset($_POST["matricule_employes"] ))
+     if(isset($_POST["nom_d'utilisateur"]) && isset($_POST["profil"]) && isset($_POST["mot_passe"]) && isset($_POST["matricule_employes"] ))
      {
-         if(empty($nom_utilisateur )) $message.= "<li>nom_d'utilisateur incorrecte !</li>";
-         if(empty($profil)) $message.="<li>profil incorrecte!</li>";
-         if(empty($mot_de_passe )) $message.= "<li>mot_de_passe incorrecte !</li>";
-         if((!empty($id_employes)) and (!empty($id_ins))) $message.= "<li>un des champs doit etre vide !</li>";
-         if((empty($id_employes)) and (empty($id_ins))) $message.= "<li>un des champ doit etre rempli !</li>";
+         if(empty($nom_utilisateur )) $message.= "<label>Entrer un nom_d'utilisateur !</label>";
+         if(empty($profil)) $message.="<label>Choisir un profil !</label>";
+         if(empty($mot_de_passe )) $message.= "<label>Entrer un mot de passe !</label>";
+         if(empty($id_employe)) $message.= "<label>Entrer le matricule de l'employé !</label>";
         
-          if(empty($message)){
+          if(empty($message) && empty($message2)){
             
            
              include("Connection_dba.php");
-             $sth = $dbco->prepare(" INSERT INTO comptes(nom_utilisateur,profil,mot_de_passe,id_employes,id_ins)
-             VALUES (?, ?, ?, ?, ?) "); 
+             $sth = $dbco->prepare(" SELECT * FROM comptes WHERE nom_utilisateur = '".$nom_utilisateur."' OR id_employe = '".$id_employe."'"); 
+              $sth->execute();
+              $res = $sth->fetchAll(PDO::FETCH_ASSOC); 
+            if(count($res) == 0){ 
+              $sth = $dbco->prepare(" INSERT INTO comptes(nom_utilisateur,profil,mot_de_passe,id_employe)
+             VALUES (?, ?, ?, ?) "); 
  
              $sth->bindValue(1, $nom_utilisateur);
              $sth->bindValue(2, $profil);
              $sth->bindValue(3, $mot_de_passe);
-             $sth->bindValue(4, $id_employes);
-             $sth->bindValue(5, $id_ins);
+             $sth->bindValue(4, $id_employe);
              $sth->execute(); 
-          
+             $message1.= "<label>Enregistrement valide !</label>";       
+                
+                }
+                else{
+                  $message2.= "<label>Ce nom d'utilisateur existe déjà</label>";
+                  $message1.= "<label>Enregistrement invalide !</label>";
+                  $message3.= "<label>Ce matricule a déjà un compte !</label>";
+                }
+             
             }
-       else{
-       
-      }
+          
          }
         }
       
@@ -59,6 +69,7 @@ error_reporting(E_ALL);
                 <div class="menu" style="background-color:#0c82d1;">
                     <nav class="navbar navbar-expand-lg " style="background-color:#0c82d1;">
                         <div class="container-fluid" style="gap:15px;float:right;">
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
                           <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Deconnection</a></button>
                       </div>
                    </nav>
@@ -67,13 +78,23 @@ error_reporting(E_ALL);
     <div class="container-fluid" style="display: flex;justify-content:center;">
     <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">CREATION COMPTES </h1>
     </div>
+    <div style="display:flex;justify-content:center;">
+    <?php if(!empty($message1)); {?>
+            <div style="display:flex;justify-content:center; color:blue;flex-direction:column;font-weight:bold;font-size:large;"> <?php echo $message1;  ?> </div> 
+            <?php }?>
+    </div> 
     <div id="formule"  style="display:flex; justify-content:center;" >
       <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" class="container col-md-5" >
             <form action="" method="post" style="width:70%; display:block; justify-content:center;">
                 <div class="mb-3 row form-inline" >
                   <label for="exampleFormControlInput1" class="form-label col-lg-4" style="display:flex;justify-content:left;">NOM D'ULISATEUR:</label>
-                  <input type="text" name="nom_d'utilisateur"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre nom d'utilisateur" required>
+                  <input type="text" name="nom_d'utilisateur"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre nom d'utilisateur">
                </div>
+               <div style="display:flex;justify-content:center;">
+                  <?php if(!empty($message2)); {?>
+                  <div style="display:flex;justify-content:center; color:blue;flex-direction:column;"> <?php echo $message2;  ?> </div> 
+                  <?php }?>
+                </div> 
                 <div class="mb-3 row form-inline">
                   <label for="exampleFormControlInput1" class="form-label col-lg-4" style="display:flex;justify-content:left;">PROFIL:</label>
                   <select type="text" name="profil" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre profil">
@@ -84,27 +105,33 @@ error_reporting(E_ALL);
                           <option >Comptable</option>
                         </select>
                 </div>
-              <div class="mb-3 row form-inline">
-                <label for="exampleFormControlInput1" style="display:flex;justify-content:left;"  class="form-label col-lg-4">MOT DE PASSE:</label>
-                <input type="text"  name="mot_passe"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre mot de passe" >
-              </div>
-              <div class="mb-3 row form-inline">
-                <label for="exampleFormControlInput1" style="display:flex;justify-content:left;"  class="form-label col-lg-4">MATRICULE ELEVES:</label>
-                <input type="number" name="matricule_eleves"  class="form-control col-lg-6" id="exampleFormControlInput1"  placeholder="matricule de l'eleve">
+                <div class="mb-3 row form-inline">
+                  <label for="exampleFormControlInput1" style="display:flex;justify-content:left;"  class="form-label col-lg-4">MOT DE PASSE:</label>
+                  <input type="text"  name="mot_passe"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre mot de passe" >
                 </div>
                 <div class="mb-3 row form-inline">
-                <label for="exampleFormControlInput1" style="display:flex;justify-content:left;"  class="form-label col-lg-4 ">MATRICULE EMPLOYES:</label>
-                <input type="number" name="matricule_employes"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="matricule de l'employe">
+                  <label for="exampleFormControlInput1" style="display:flex;justify-content:left;"  class="form-label col-lg-4 ">MATRICULE EMPLOYES:</label>
+                  <input type="number" name="matricule_employes"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="matricule de l'employe">
                 </div>
-              <div class="col-12 text-center" style=" display:flex;justify-content:center; margin-top:20px;">
-                  <button class="btn btn-primary" type="submit" name="valider">ENVOYER</button>
-              </div> 
-              <?php if(!empty($message)); {?>
-            <div style="display:flex; color:red;flex-direction:columb;"> <?php echo $message;  ?> </div> 
-            <?php }?> 
+                <div style="display:flex;justify-content:center;">
+                  <?php if(!empty($message3)); {?>
+                  <div style="display:flex;justify-content:center; color:blue;flex-direction:column;"> <?php echo $message3;  ?> </div> 
+                  <?php }?>
+                </div>
+                <div class="col-12 text-center" style=" display:flex;justify-content:center; margin-top:20px;">
+                    <button class="btn btn-primary" type="submit" name="valider">ENVOYER</button>
+                </div>
+                <div> 
+                    <?php if(!empty($message)); {?>
+                    <div style="display:flex; color:red;flex-direction:column;"> <?php echo $message;  ?> </div> 
+                    <?php }?> 
+                </div>
           </form>
         </div>
         </div>
+        <footer class="container-fluid fixed-bottom" style="float: bottom;">
+          <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
+      </footer>
     
     <style>
           
@@ -129,22 +156,15 @@ error_reporting(E_ALL);
             text-align: center;
             padding: 50px;
             color: #fff;
-              margin-top:140px; 
+            margin-top: 168px;  
             height:50px;
             float: bottom;
           }
           h1{
             font-weight:bolder;
           }
-          img{
-             margin-left:100px; 
-          }
-          
         </style>
 
-
   </body>
-     <footer class="box-sizing:border-box;">
-          <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
-      </footer>
+     
 </html>
