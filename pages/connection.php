@@ -1,6 +1,7 @@
 <?php
  ini_set("display_errors", "1");
  error_reporting(E_ALL);
+     $message1="";
      $message=""; 
      @$user=$_POST["nom_utilisateur"];
      @$profil = $_POST["profil"];
@@ -28,7 +29,7 @@
             $sth->execute();
             $res = $sth->fetchAll(PDO::FETCH_ASSOC); 
             if(count($res) == 0){        
-                echo "Vous n'êtes pas dans la base de données, inscrivez-vous";
+                echo "<li>Vous n'êtes pas dans la base de données, inscrivez-vous</li>";
                 }
             else
             {
@@ -57,6 +58,7 @@
          }       
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,6 +76,11 @@
     
 
     <div class="login">
+    <div>
+            <?php if(!empty($message)); {?>
+            <div style="display:flex; color:red;flex-direction:column"> <?php echo $message;  ?> </div> 
+            <?php }?> 
+            </div> 
        
         <h1 class="text-center">Connection</h1>
         <form action="" method="post">
