@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-        <h1 style="display:flex;justify-content:center;margin-top:50px;">LISTE DES EMPLOYES</h1>
+        <h1 style="display:flex;justify-content:center;margin-top:50px;font-weight:bold;">LISTES DES EMPLOYES</h1>
         <table class="table table-bordered table-hover table-stripped">
             <tr><th>PRENOM</th><th>NOM</th><th>ADRESSE</th><th>FONCTION</th><th>NATIONALITE</th><th>ACTIONS</th></tr>
             <?php

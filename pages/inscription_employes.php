@@ -111,8 +111,8 @@ $message3="";
             <?php }?>
     </div> 
 
-        <div id="formule"  style="display:flex; justify-content:center;" class="container-fluid">
-          <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" class="container">
+        <div id="formule"  style="display:flex; justify-content:center;" >
+          <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" class="container col-md-6">
               
                 <form action="" method="post" style="width:80%; ">
                 <div style="display:flex;justify-content:center;">
@@ -188,9 +188,7 @@ $message3="";
             </div>
             </div>
             <style>
-              body{
               
-              }
             #formul{
                 border: 2px solid black;
                 border-radius:1rem;
