@@ -12,9 +12,9 @@
 </head>
 <body>
 <div class="container">
-        <h1>LISTE DES EMPLOYES</h1>
+        <h1 style="display:flex;justify-content:center;margin-top:50px;font-weight:bold;">LISTES DES EMPLOYES</h1>
         <table class="table table-bordered table-hover table-stripped">
-            <tr><th>PRENOM</th><th>NOM</th><th>ADRESSE</th><th>ACTIONS</th></tr>
+            <tr><th>PRENOM</th><th>NOM</th><th>ADRESSE</th><th>FONCTION</th><th>NATIONALITE</th><th>ACTIONS</th></tr>
             <?php
             include("Connection_dba.php");
             $list = "SELECT * FROM employes";
@@ -24,9 +24,11 @@
                 $prenom = $data["prenom"];
                 $nom = $data["nom"];
                 $adresse = $data["adresse"];
+                $fonction = $data["fonction"];
+                $nationalite = $data["nationalite"];
                 $archive = $data["archive"];
                 if($archive==0){
-                echo "<tr><td>$prenom</td><td>$nom</td><td>$adresse</td>";
+                echo "<tr><td>$prenom</td><td>$nom</td><td>$adresse</td><td>$fonction</td><td>$nationalite</td>";
                 echo "<td style='display:flex; gap: 10px; justify-content:center;'>";
                 echo "<a href='modifier_tab_employes.php?id=$id' class='btn btn-warning'>Modifier</a>";
                 echo "<a href='afficher_tab_employes.php?id=$id' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer\")' class='btn btn-danger'>Supprimer</a>";

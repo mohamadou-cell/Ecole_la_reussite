@@ -1,5 +1,5 @@
 <?php 
-$servername = 'localhost'; $username = 'root'; $password = 'laf99f@11'; 
+$servername = 'localhost'; $username = 'root'; $password = ''; 
 try{ 
 $dbco = new PDO("mysql:host=$servername;dbname=gestion_ecole", $username, $password); 
 $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
