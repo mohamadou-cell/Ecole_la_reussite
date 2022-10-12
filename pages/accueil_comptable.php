@@ -63,13 +63,9 @@
             justify-content: center;
             background-color: black;
             text-align: center;
-            /* padding: 50px; */
             color: #fff;
-            /* margin-top:120px; */
             height:100px;
-            align-items: center;
-            
-            
+            align-items: center;           
           }
          
           

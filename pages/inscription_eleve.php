@@ -4,6 +4,7 @@ error_reporting(E_ALL);
     $message=""; 
     $message1="";
     $message2="";
+    $message3="";
     @$prenom = $_POST["prenom"];
     @$nom = $_POST["nom"];
     @$date = $_POST["date_naissance"];
@@ -69,6 +70,17 @@ if(isset($_POST["valider"])){
             $sth->execute();
             //$sth->execute(array( /* ':prenom' =>  */$nom, /* ':nom' =>  */$prenom,/* ':date_naissance' =>  */$date, /* ':adresse' =>  */$adresse, /* ':sexe' =>  */$sexe, /* ':nat' => */ $nationalite, /* ':mail' =>  */$email, /* ':nt' =>  */$nom_tuteur, /* ':nut' =>  */$numero_tuteur)); */
               $message2.="<label>Enregistrement valide</label>";
+              $sql = "SELECT id_ins FROM inscription WHERE email = '".$email."'";
+                $id = $dbco->prepare($sql);
+                $id->execute();
+                $row = $id->fetch(PDO::FETCH_ASSOC);
+                //on modifie le matricule
+                $matricule = date('Y-', time()).$row['id_ins'].'-ELV';
+                //on modifie la derniere matricule du BD
+                $sql2 = "UPDATE inscription  SET  matricule = '$matricule' WHERE email = '".$email."'";
+                $matricule2 = $dbco->prepare($sql2);
+                $matricule2->execute();
+                $message3.="<label>Votre matricule est: '".$matricule."'</label>";
         }
         else{
           $message2.="<label>Enregistrement invalide</label>";
@@ -100,7 +112,7 @@ if(isset($_POST["valider"])){
 
 <body>
   
-<div class="joli" style="display:flex;"></div>
+<nav>
         <div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;background-color:#0c82d1;display:flex;align-items:center;" >
             <div class="container-fluid"><img src="../images/image.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
                 <div class="menu" style="background-color:#0c82d1;">
@@ -113,14 +125,21 @@ if(isset($_POST["valider"])){
                       </div>
                    </nav>
              </div>
-        </div>  
+        </div> 
+        </nav>
+    <main>     
     <div class="container-fluid" style="display: flex;justify-content:center;">
     <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">INSCRIPTION ELEVES </h1>
     </div>
-    <div id="formule"  style="display:flex; justify-content:center;" class="container-fluid">
-    <div>
+    <div id="formule"  style="display:block; justify-content:center;" class="container-fluid">
+    <div style="display: flex; justify-content:center;">
         <?php if(!empty($message2)); {?>
         <div style="display:flex; color:blue;flex-direction:column;justify-content:center;font-size:large;"> <?php echo $message2;  ?> </div> 
+        <?php }?> 
+      </div>
+      <div style="display: flex; justify-content:center;">
+        <?php if(!empty($message3)); {?>
+        <div style="display:flex; color:brown;flex-direction:column;justify-content:center;font-size:large;"> <?php echo $message3;  ?> </div> 
         <?php }?> 
       </div>
       <div id="formul" style="display:flex; justify-content:center; margin-top :50px;" class="container">

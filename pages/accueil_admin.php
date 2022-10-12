@@ -1,7 +1,5 @@
 <?php
-      if($_POST["prenom"] = "" && $_POST["nom"] = "" && $_POST["date_naissance"] = "" && $_POST["adresse"] = "" && $_POST["sexe"] = "" && $_POST["nationalite"] != "" && $_POST["email"] != "" && $_POST["nom_tuteur"] != "" && $_POST["numero_tuteur"] != ""){ // si les saisies ne sont pas vides
-        echo "Veuillez remplir les champs vides";
-       }
+     session_start();
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +34,9 @@
     <div class="container-fluid" style="display: flex;justify-content:center;">
     <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">ACCUEIL ADMIN </h1>
     </div>
+    <?php
+        echo "Bonjour '".$_SESSION['nom']."'";
+    ?>
     <div class="container" style="display: flex; ">
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3"><i class="bi bi-book"></i><h5>COMPTES</h5></button>
