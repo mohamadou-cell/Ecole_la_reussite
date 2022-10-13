@@ -8,92 +8,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title>Document</title>
-    
-</head>
-<body>
-<div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;background-color:#0c82d1;display:flex;align-items:center;" >
-            <div class="container-fluid"><img src="images/images.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
-            <div class="info"style=" display: flex;justify-content: center;"> <h1>ACTUALITÉS DE L'ÉCOLE</h1>
-             </div>
-                
-            <div class="menu" style="background-color:#0c82d1;">
-             
-                    <nav class="navbar navbar-expand-lg " style="background-color:#0c82d1;">
-                   
-                        
-                    <div class="container" style="gap:15px;float:right;">
-                    <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
-                    <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Emploidutemps</a></button>
-                    <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Admissibilité</a></button>
-                   
-                </div>
-                   </nav>
-                
-             </div>
 
-        </div>
-     <!--    <img class="mw-100" src="images/images4.jpg" alt="Max-width 100%">
-       
-        <div class="imag" >
-        <p class="text-left" style=" height:10px;width:100%; height: 150px;">Créé en 2010,L'école d'exélance LA RÉUSSITE est un établissement d’enseignement primaire
- secondaire à programme sénégalais qui a pour vocation de faire de l’école un lieu d’acquisition
-  de connaissances et de compétences. Mais également un lieu d'épanouissement, de développement
-   personnel et d’apprentissage de l’autonomie où chaque élève doit pouvoir réaliser un parcours 
-   scolaire de réussite.
- La RÉUSSITE fait partie du réseau des meilleurs école privé d’excellence au Sénégal.
-l'école comte 36 classe avec effectif de  10000 élèves de la Cp à la Terminale. 
-De nombreuses nationalités s’y côtoient et cette diversité génère un dynamisme et un réel un esprit d’ouverture.</p>
-</div> -->
-<div class="row" style="margin:top 10px;">
-<div class="col-6">
-                  <img src="images/images3.jpeg" alt="Logo HTML w3"
-                   style="width:90%; height: 50%;;margin-top:20%;margin-left:15px;"><h1>Ecole la réussite</h1>
-                  <p style="margin-left :14px; ;">Créé en 2010,L'école d'exélance LA RÉUSSITE est un établissement d’enseignement primaire 
- secondaire <br> à programme sénégalais qui a pour vocation de faire de l’école un lieu d’acquisition
-  de connaissances et <br>de compétences.  Mais également un lieu d'épanouissement, de développement
-   personnel et d’apprentissage <br>de l’autonomie où chaque élève doit pouvoir réaliser un parcours 
-   scolaire de réussite.
- La RÉUSSITE fait partie du<br> réseau des meilleurs école privé d’excellence  Sénégal.<br>
-l'école comte 36 classe avec effectif de  10000 élèves de la Cp à la Terminale. 
-De nombreuses nationalités s’y <br>côtoient et cette diversité génère un dynamisme et un réel un esprit d’ouverture.</p>
-               </div>
-               <div class="col-6" style="width:90% ;">
-                  <img src="images/images6.jpg" class="rounded" alt="Logo HTML w3"
-                   style="width:90%; height:50%;margin-top:20%">
-                   <h1>Les inscriptions sont toujours ouvertes ! </h1>
-        <p> Chaque année l'école la réussite participe au concours général organiser par l'Etat 
-        du sénégal sous le tutéle <br> du minutre de l'éducation nationnal.l'ecole faira un concour 
-        intérne consérnent les éléves qui ont une moyénne <br> général supérieur à 14 pour  séléctioner
-         un représentant.
-         <ul>  
- Les inscriptions sont toujours ouvertes !
-Il reste encore quelques places pour vous inscrire dans les classes <br> de CP 
-à la TERMINAL ! Vous pouvez choisir les series L',L2,S1,S2 pour les niveau secondaire
-  Nous vous accompagnerons dans chaque
-  étape de votre parcours et
- vous donnons rendez-vous dans nos locaux.</ul></p>
-               </div>
-               </div>
-               
-       <!--     <div class="contenair-fluid">
-     <footer style="width: 100%; ">
-        <p>Copyright &copy; 2022 Groupe :</p>
-    </footer>
-    </div > --> 
-         <style>
-    .logo{
-        display: flex;
+
+
+<style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+            form
+            {
+                float:none;
+            }
+            header{
+                margin-top: 0px ;
+                
+            }
+            .corps
+            {
+                display: block;
+                
+            }
+            #nave{
+                
+             position: fixed;
+             display: flex;
         justify-content: center;
         align-items: center;
-    }
+            }
+    
     .menu{
-        margin-left: 250px;
+       width: 100%;
     }
     h1{
         display: flex;
         justify-content: center;
-     
+    width:100%;
     }
+   
     footer {
       background-color: #0c82d1;
      text-align: center;
@@ -110,6 +63,14 @@ Il reste encore quelques places pour vous inscrire dans les classes <br> de CP
     .mass{
         gap: 10%;
     }
+    .for{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10%;
+        background-color: black;
+        
+    }
    
     
     .info{
@@ -119,8 +80,127 @@ Il reste encore quelques places pour vous inscrire dans les classes <br> de CP
     .body.imag{
 margin-top: 20%;
     }
+    .forma{
+       
+        border: 2px;
+    }
 
     </style>
+    
+</head>
+<body>
+<header>
+<div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; 
+height: 150px;background-color:#0c82d1;display:flex;align-items:center; " >
+            <div class="container-fluid"><img src="images/images.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
+                <div class="menu" style="background-color:#0c82d1; color:#fff;display:flex;justify-content:center;align-items:center;width: 700%;">
+                <h1>GESTION CONTABLE</h1>
+                    <nav class="navbar navbar-expand-lg " style="background-color:#0c82d1;">
+                        <div class="container" style="gap:15px;float:right;">
+                          
+                    <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
+                    <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="dépenses.php">Dépense</a></button>
+                  </div>
+                   </nav>
+             </div>
+        </div> 
+                
+    
+    
+</header>
+      
+
+
+
+
+
+<!-- mian -->
+
+<div id="container" style="display: flex;justify-content:center;border-radius:1rem;padding:30px;">
+
+<div class="forma" style=" border:1px solid black ;margin-top:10%;border-radius: 20px;width:50%" >
+
+   <div id="formule"  style="display:flex; justify-content:center; " class="container-fluid">
+   
+   <div id="formul" style="display:flex; justify-content:center; margin-top :60px;width:90%;" class="container">
+         
+         <form>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="nom" class="form-label">Nom</label>
+                <input id="nom" class="form-control" type="text" name="" placeholder="Entrer votre nom">
+              </div>
+              <div class="col-md-6">
+                <label for="prenom" class="form-label">Prénom</label>
+                <input id="prenom" class="form-control" type="text" name="" placeholder="Entrer votre prénom">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="classe" class="form-label">classe</label>
+                <input id="classe" class="form-control" type="text" name="" placeholder="Entrer votre niveau">
+              </div>
+              <div class="col-md-6">
+                <label for="numéro" class="form-label">Nunéro identification</label>
+                <input id="numéro" class="form-control" type="text" name="" placeholder="Entrer votre numéro">
+              </div>
+              </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="frais" class="form-label">Frais d'inscription</label>
+                <input id="frais" class="form-control" type="text" name="" placeholder="Entrer le montent">
+              </div>
+              <div class="col-md-6">
+              <label for="start">date de payeent</label><br>
+
+<input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+              </div>
+          
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="frais" class="form-label">mensualité</label>
+                <input id="frais" class="form-control" type="number" name="" placeholder="Entrer la somme">
+              </div>
+           <div class="col-md-6">
+           <label for="start">date de payement</label><br>
+
+<input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+</div>
+            </div>
+            <div class="row" style="margin-bottom: 10px;">
+              <div class="col-12">
+                <label for="adresse" class="form-label">Message</label>
+                <input id="adresse" class="form-control" type="text" name="" placeholder="Entrer votre adresse">
+              </div>
+            </div>
+          
+          <button class="btn btn-primary" style="margin-bottom: 20px;">Enrégistrer</button>
+        </form>
+        </div>
+        </div>
+ </div>
+ </div>
+     <!--    <form action="">
+            <input type="text"><br>
+            <input type="text"><br>
+            <input type="text"><br>
+            <input type="text"><br>
+            <input type="text"><br>
+            <input type="text"><br>
+        </form> -->
+<!-- main -->
+
+<!-- footer -->
+
+<footer class="container-fluid fixed-bottom" style="float: bottom;">
+          <p>Copyright &copy; 2022 Groupe :SN SOLID Dev</p>
+      </footer>
+<!-- footer -->
       
 </body>
 </html>
