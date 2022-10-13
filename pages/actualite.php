@@ -12,26 +12,27 @@
 </head>
 <body>
 <div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;background-color:#0c82d1;display:flex;align-items:center;" >
-            <div class="container-fluid"><img src="images/images.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
-            <div class="info"style=" display: flex;justify-content: center;"> <h1>ACTUALITÉS DE L'ÉCOLE</h1>
-             </div>
-                
-            <div class="menu" style="background-color:#0c82d1;">
-             
+            <div class="container-fluid"><img src="../images/image.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
+                <div class="menu" style="background-color:#0c82d1;">
                     <nav class="navbar navbar-expand-lg " style="background-color:#0c82d1;">
-                   
-                        
-                    <div class="container" style="gap:15px;float:right;">
-                    <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
-                    <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Emploidutemps</a></button>
-                    <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Admissibilité</a></button>
-                   
-                </div>
+                        <div class="container-fluid" style="gap:15px;float:right;">
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;width: 150px;"><a href="Admissiblite.php">Admissibilité</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="inscription_employes.php">Inscription</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Connection</a></button>
+                      </div>
                    </nav>
-                
+             </div>
+        </div>
+        <!-- <div class="info"style="display:flex;justify-content: center;background-color:black;"> 
+            <h1>ACTUALITÉS DE L'ÉCOLE</h1>
+        </div> 
+<div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;background-color:#0c82d1;display:flex;align-items:center;" >
+            <div class="container-fluid"><img src="images/images.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
+            <div class="info"style="display:flex;justify-content: center;"> <h1>ACTUALITÉS DE L'ÉCOLE</h1>
              </div>
 
-        </div>
+        </div> -->
      <!--    <img class="mw-100" src="images/images4.jpg" alt="Max-width 100%">
        
         <div class="imag" >
@@ -44,11 +45,11 @@
 l'école comte 36 classe avec effectif de  10000 élèves de la Cp à la Terminale. 
 De nombreuses nationalités s’y côtoient et cette diversité génère un dynamisme et un réel un esprit d’ouverture.</p>
 </div> -->
-<div class="row" style="margin:top 10px;">
+<!-- <div class="row" style="margin:top 10px;">
 <div class="col-6">
-                  <img src="images/images3.jpeg" alt="Logo HTML w3"
-                   style="width:90%; height: 50%;;margin-top:20%;margin-left:15px;"><h1>Ecole la réussite</h1>
-                  <p style="margin-left :14px; ;">Créé en 2010,L'école d'exélance LA RÉUSSITE est un établissement d’enseignement primaire 
+    <img src="images/images3.jpeg" alt="Logo HTML w3" style="width:90%; height: 50%;;margin-top:20%;margin-left:15px;">
+    <h1>Ecole la réussite</h1>
+    <p style="margin-left :14px; ;">Créé en 2010,L'école d'exélance LA RÉUSSITE est un établissement d’enseignement primaire 
  secondaire <br> à programme sénégalais qui a pour vocation de faire de l’école un lieu d’acquisition
   de connaissances et <br>de compétences.  Mais également un lieu d'épanouissement, de développement
    personnel et d’apprentissage <br>de l’autonomie où chaque élève doit pouvoir réaliser un parcours 
@@ -56,11 +57,10 @@ De nombreuses nationalités s’y côtoient et cette diversité génère un dyna
  La RÉUSSITE fait partie du<br> réseau des meilleurs école privé d’excellence  Sénégal.<br>
 l'école comte 36 classe avec effectif de  10000 élèves de la Cp à la Terminale. 
 De nombreuses nationalités s’y <br>côtoient et cette diversité génère un dynamisme et un réel un esprit d’ouverture.</p>
-               </div>
-               <div class="col-6" style="width:90% ;">
-                  <img src="images/images6.jpg" class="rounded" alt="Logo HTML w3"
-                   style="width:90%; height:50%;margin-top:20%">
-                   <h1>Les inscriptions sont toujours ouvertes ! </h1>
+    </div>
+    <div class="col-6" style="width:90% ;">
+    <img src="images/images6.jpg" class="rounded" alt="Logo HTML w3" style="width:90%; height:50%;margin-top:20%">
+    <h1>Les inscriptions sont toujours ouvertes ! </h1>
         <p> Chaque année l'école la réussite participe au concours général organiser par l'Etat 
         du sénégal sous le tutéle <br> du minutre de l'éducation nationnal.l'ecole faira un concour 
         intérne consérnent les éléves qui ont une moyénne <br> général supérieur à 14 pour  séléctioner
@@ -73,15 +73,15 @@ Il reste encore quelques places pour vous inscrire dans les classes <br> de CP
   étape de votre parcours et
  vous donnons rendez-vous dans nos locaux.</ul></p>
                </div>
-               </div>
-               
+               </div> 
+                -->
        <!--     <div class="contenair-fluid">
      <footer style="width: 100%; ">
         <p>Copyright &copy; 2022 Groupe :</p>
     </footer>
     </div > --> 
          <style>
-    .logo{
+ /*    .logo{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -119,7 +119,7 @@ Il reste encore quelques places pour vous inscrire dans les classes <br> de CP
     .body.imag{
 margin-top: 20%;
     }
-
+ */
     </style>
       
 </body>

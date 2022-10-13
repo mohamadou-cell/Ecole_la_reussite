@@ -12,24 +12,24 @@
 </head>
 <body>
 <div class="container">
-        <h1>LISTE DE PRESENCE DES ELEVES</h1>
-        <div style="display: flex; justify-content:center;height:100px; align-items:center;" class="container-fluid">
+        <h1 style="margin-bottom:50px">LISTE DE PRESENCE DES ELEVES</h1>
+        <!-- <div style="display: flex; justify-content:center;height:100px; align-items:center;" class="container-fluid">
             <form action="" method="post" style="display: flex;gap:15px;">
                 <input type="text" name="classe" placeholder="Entrer le nom de la classe" class="form-control col-lg-9">
                 <input type="submit" name="verif" value="RECHERCHER" class="btn btn-info">
             </form>
-        </div>
+        </div> -->
         <table class="table table-bordered table-hover table-stripped">
         <tr><th>PRENOM</th><th>NOM</th><th>ADRESSE</th><th>SEXE</th><th>CLASSE</th><th>NATIONALITE</th><th>ACTIONS</th></tr>
             <?php
-            if(isset($_POST["verif"])){
+            /* if(isset($_POST["verif"])){
                 if(isset($_POST["classe"])){
                     $classe = $_POST["classe"];
                     if(!empty($classe)){
 
-                    
+                   */  
             include("Connection_dba.php");
-            $list = "SELECT * FROM inscription WHERE classe LIKE '%$classe%'";
+            $list = "SELECT * FROM inscription";
             $result = $dbco->query($list);
             while($data = $result->fetch()){
                 $id = $data["id_ins"];
@@ -49,9 +49,9 @@
                 echo "</tr>";
                 }
             }
-        }
+      /*   }
     }
-}
+} */
             
                 
 ?>

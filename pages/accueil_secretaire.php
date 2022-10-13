@@ -1,8 +1,4 @@
-<?php
-      if($_POST["prenom"] = "" && $_POST["nom"] = "" && $_POST["date_naissance"] = "" && $_POST["adresse"] = "" && $_POST["sexe"] = "" && $_POST["nationalite"] != "" && $_POST["email"] != "" && $_POST["nom_tuteur"] != "" && $_POST["numero_tuteur"] != ""){ // si les saisies ne sont pas vides
-        echo "Veuillez remplir les champs vides";
-       }
-    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +35,7 @@
                 <button type="submit" class="btn btn-success mb-3"><a href="inscription_eleve.php"><i class="bi bi-book" style="color: white;"></i><h5 style="color: white;">INSCRIPTION-ELEVE</h5></a></button>
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-info mb-3"><a href=""><i class="bi bi-book" style="color: white;"></i><h5 style="color: white;">EMPLOI DU TEMPS</h5></a></button>
+                <button type="submit" class="btn btn-info mb-3"><a href="emploi_du_temps.php"><i class="bi bi-book" style="color: white;"></i><h5 style="color: white;">EMPLOI DU TEMPS</h5></a></button>
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-warning mb-3"><a href="afficher_tab_eleve.php"><i class="bi bi-book" style="color: white;"></i><h5 style="color: white;">LISTE DES ELEVES</h5></a></button>
@@ -47,26 +43,7 @@
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3"><a href="list_presence_employe.php"><i class="bi bi-book" style="color: white;"></i><h5 style="color: white;">LISTE DE PRESENCE</h5></a></button>
             </div>
-            <!-- <div class="col-auto">
-                <button type="submit" class="btn btn-secondary mb-3"><i class="bi bi-book"></i><h5>INSCRIPTION-EMPLOYE</h5></button>
-            </div> -->
             
-            
-            <!-- <div class="col-auto">
-                <button type="submit" class="btn btn-danger mb-3"><i class="bi bi-book"></i><h5>EMPLOI DU TEMPS</h5></button>
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-info mb-3"><i class="bi bi-book"></i><h5>EMPLOI DU TEMPS</h5></button>
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-light mb-3"><i class="bi bi-book"></i><h5>EMPLOI DU TEMPS</h5></button>
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-dark mb-3"><i class="bi bi-book"></i><h5>EMPLOI DU TEMPS</h5></button>
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-white mb-3"><i class="bi bi-book"></i><h5>EMPLOI DU TEMPS</h5></button>
-            </div> -->
             
         </div>
         

@@ -23,9 +23,7 @@
                 <div class="menu" style="background-color:#0c82d1;">
                     <nav class="navbar navbar-expand-lg" style="background-color:#0c82d1;">
                         <div class="container-fluid" style="gap:15px;float:right;">
-                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Accueil</a></button>
-                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Inscription</a></button>
-                          <button class="btn btn-outline-success" type="submit" style="background-color:white;width: 150px;"><a href="connection.php">Emploi du temps</a></button>
+                          <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
                           <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Deconnection</a></button>
                       </div>
                    </nav>
@@ -34,21 +32,19 @@
     <div class="container-fluid" style="display: flex;justify-content:center;">
     <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">ACCUEIL ADMIN </h1>
     </div>
-    <?php
-        echo "Bonjour '".$_SESSION['nom']."'";
-    ?>
-    <div class="container" style="display: flex; ">
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-3"><i class="bi bi-book"></i><h5>COMPTES</h5></button>
+    
+    <div class="container-fluid" style="display: flex;justify-content:center;">
+    <div class="col-auto">
+                <button type="submit" class="btn btn-success mb-3"><a href="inscription_eleve.php"><i class="bi bi-book" style="color: white;"></i><h5 style="color: white;">INSCRIPTION-ELEVE</h5></a></button>
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-secondary mb-3"><i class="bi bi-book"></i><h5>INSCRIPTION-EMPLOYE</h5></button>
+                <button type="submit" class="btn btn-info mb-3"><a href="emploi_du_temps.php"><i class="bi bi-book" style="color: white;"></i><h5 style="color: white;">EMPLOI DU TEMPS</h5></a></button>
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-success mb-3"><i class="bi bi-book"></i><h5>INSCRIPTION-ELEVE</h5></button>
+                <button type="submit" class="btn btn-warning mb-3"><a href="afficher_tab_eleve.php"><i class="bi bi-book" style="color: white;"></i><h5 style="color: white;">LISTE DES ELEVES</h5></a></button>
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-warning mb-3"><i class="bi bi-book"></i><h5>EMPLOI DU TEMPS</h5></button>
+                <button type="submit" class="btn btn-primary mb-3"><a href="afficher_tab_eleve.php"><i class="bi bi-book" style="color: white;"></i><h5 style="color: white;">LISTE DES EMPLOYÉS</h5></a></button>
             </div>
             <!-- <div class="col-auto">
                 <button type="submit" class="btn btn-danger mb-3"><i class="bi bi-book"></i><h5>EMPLOI DU TEMPS</h5></button>

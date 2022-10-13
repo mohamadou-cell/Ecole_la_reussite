@@ -58,6 +58,7 @@
                             $list = "UPDATE inscription SET archive = '1' where id_ins=$id";
                             $result = $dbco->query($list);
                             header("Location:afficher_tab_eleve.php");
+                            echo "Archivage réussi";
                     }
                 }
 ?>

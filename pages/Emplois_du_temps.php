@@ -17,8 +17,7 @@
                     <div class="container" style="gap:15px;float:right;">
                   
                       <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="page_accueil.php">Accueil</a></button>
-                      <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="Emplois_du_temps.php">Primaire</a></button>
-                      <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="secondaire.php">Secondaire</a></button>   
+                      <button class="btn btn-outline-success" type="submit" style="background-color:white;"><a href="connection.php">Deconnection</a></button>  
                    </div>
                   </nav>
              </div>
@@ -26,30 +25,30 @@
         <div style="display: flex;justify-content:center;">
             <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;"> EMPLOI DU TEMPS  ANNEE 2022-2023</h1>
          </div>        
-    
+        <div class="container">
+        <div style="display: flex; justify-content:center;">
+                <h3>SECONDAIRE</h3>
+            </div>
         <table class="table table-bordered table-hover table-stripped">
-            <tr><th>HORAIRE</th><th>JOURS</th><th>SALLES</th><th>MATIERES</th><th>NOM DU PROFESSEUR</th><th>ACTIONS</th></tr>
+            <tr><th>HORAIRE</th><th>JOURS</th><th>SALLES</th><th>MATIERES</th><th>CLASSE</th><th>NOM DU PROFESSEUR</th></tr>
             <?php
             include("Connection_dba.php");
-            $list = "SELECT * FROM emploi_du_temps";
+            $list = "SELECT * FROM emploi_du_temps WHERE niveau = 'Secondaire'";
             $result = $dbco->query($list);
             while($data = $result->fetch()){
-              $id = $data["	id_edt"];
-                $jours = $data["jours"];
+              
+                $jours = $data["jour"];
                 $horaire = $data["horaire"];
-                $salles = $data["salles"];
-                $matieres = $data["matieres"];
+                $salles = $data["salle"];
+                $matieres = $data["matiere"];
+                $classe = $data["classe"];
                 $nom_prof = $data["nom_prof"];
-                $archive = $data["archive"];
-                if($archive==0){
-                echo "<tr><td>$jours</td><td>$horaire</td><td>$salles</td><td> $matieres</td><td>$nom_prof</td>";
-                echo "<td style='display:flex; gap: 10px; justify-content:center;'>";
-                echo "<a href='modifier_emploi_du_temps.php?id=$id' class='btn btn-warning'>Modifier</a>";
-                echo "<a href='Emplois_du_temps.php?id=$id' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer\")' class='btn btn-danger'>Supprimer</a>";
-                echo "</td";
+                
+                echo "<tr><td>$jours</td><td>$horaire</td><td>$salles</td><td> $matieres</td><td> $classe</td><td>$nom_prof</td>";
+                
                 echo "</tr>";
                 }
-            }
+            
             
                 if(isset($_GET["id"])){
                     $id = $_GET["id"];
@@ -62,6 +61,44 @@
                 }
 ?>
         </table>
+        </div>
+        <div class="container">
+            <div style="display: flex; justify-content:center;">
+                <h3>PRIMAIRE</h3>
+            </div>
+        <table class="table table-bordered table-hover table-stripped">
+            <tr><th>HORAIRE</th><th>JOURS</th><th>SALLES</th><th>MATIERES</th><th>CLASSE</th><th>NOM DU PROFESSEUR</th></tr>
+            <?php
+            include("Connection_dba.php");
+            $list = "SELECT * FROM emploi_du_temps WHERE niveau = 'Primaire'";
+            $result = $dbco->query($list);
+            while($data = $result->fetch()){
+              
+                $jours = $data["jour"];
+                $horaire = $data["horaire"];
+                $salles = $data["salle"];
+                $matieres = $data["matiere"];
+                $classe = $data["classe"];
+                $nom_prof = $data["nom_prof"];
+                
+                echo "<tr><td>$jours</td><td>$horaire</td><td>$salles</td><td> $matieres</td><td> $classe</td><td>$nom_prof</td>";
+                
+                echo "</tr>";
+                }
+            
+            
+                if(isset($_GET["id"])){
+                    $id = $_GET["id"];
+                    if(!empty($id) && is_numeric($id)){
+                        include("Connection_dba.php");
+                            $list = "UPDATE emploi_du_temps SET archive = '1' where id_edt=$id";
+                            $result = $dbco->query($list);
+                            header("Location:Emplois_du_temps.php");
+                    }
+                }
+?>
+        </table>
+        </div>
         <?php
 if(isset($_POST["valide"])){
     if(isset($_POST["id"]) && isset($_POST["jours"]) && isset($_POST["horaire"]) && isset($_POST["salles"]) && isset($_POST["matieres"]) && isset($_POST["nom_prof"]) )
@@ -112,9 +149,7 @@ if(isset($_POST["valide"])){
           h1{
             font-weight:bolder;
           }
-          #contenair{
-
-          }
+          
 </style> 
 </body>
 </html>

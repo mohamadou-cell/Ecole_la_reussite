@@ -21,7 +21,8 @@ session_start();
             $user = trim($_POST['nom_utilisateur']);
             $profil = trim($_POST['profil']);
             $pass = trim($_POST['password']);
-             
+
+            $_SESSION["nom_utilisateur"]=$user;
             
             include('Connection_dba.php');
             
@@ -67,14 +68,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> 
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> 
 <title>Document</title>
 </head>
 <body>
-    
-
+     <div style="background-color: skyblue;">       
+    <a href="page_accueil.php" class="btn btn-secondary"><i class="bi bi-arrow-left-circle-fill"></i></a>
+    </div>
+    <div id="log">
     <div class="login">
     <div>
             <?php if(!empty($message1)); {?>
@@ -107,6 +111,8 @@ session_start();
             <?php }?> 
             </div>    
         </form>
+        </div>
+    
 
         
     
@@ -119,7 +125,8 @@ session_start();
     box-sizing:border-box;
 
 }
-body{
+
+#log{
     height: 110vh;
     display: flex;
     align-items: center;

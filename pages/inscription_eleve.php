@@ -5,6 +5,7 @@ error_reporting(E_ALL);
     $message1="";
     $message2="";
     $message3="";
+    $message4="";
     @$prenom = $_POST["prenom"];
     @$nom = $_POST["nom"];
     @$date = $_POST["date_naissance"];
@@ -84,6 +85,7 @@ if(isset($_POST["valider"])){
         }
         else{
           $message2.="<label>Enregistrement invalide</label>";
+          $message4.="<label>Cet email exite déja</label>";
         }
       }
     }
@@ -198,6 +200,11 @@ if(isset($_POST["valider"])){
               <div class="mb-3 row form-inline" style="display: flex;justify-content:center;">
                 <label for="exampleFormControlInput6" class="form-label col-lg-4" style="display: flex;justify-content:left;">EMAIL:</label>
                 <input type="email" class="form-control col-lg-6" id="exampleFormControlInput6" placeholder="Entrer le mail" name="email">
+              </div>
+              <div style="display: flex; justify-content:center;">
+                <?php if(!empty($message4)); {?>
+                <div style="display:flex; color:red;flex-direction:column;justify-content:center;"> <?php echo $message4;  ?> </div> 
+                <?php }?> 
               </div>
               <div>
                 <?php if(!empty($message1)); {?>
