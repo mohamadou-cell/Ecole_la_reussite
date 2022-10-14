@@ -8,15 +8,19 @@ $message1="";
 @$horaire = $_POST["horaire"];
 @$salles = $_POST["salles"];
 @$matieres = $_POST["matieres"];
+@$niveau = $_POST["niveau"];
+@$classe = $_POST["classe"];
 @$nom_prof = $_POST["nom_prof"];
 
     if(isset($_POST["valider"])){
-        if(isset($_POST["jours"]) && isset($_POST["horaire"]) && isset($_POST["salles"]) && isset($_POST["matieres"]) && isset($_POST["nom_prof"])) 
+        if(isset($_POST["jours"]) && isset($_POST["horaire"]) && isset($_POST["salles"]) && isset($_POST["matieres"]) && isset($_POST["niveau"]) && isset($_POST["classe"]) && isset($_POST["nom_prof"])) 
         {
-          if(empty($jours )) $message.= "<label>saisir un jours!</label>";
+          if(empty($jours )) $message.= "<label>saisir un jour!</label>";
          if(empty($horaire)) $message.="<label>saisir un horaire !</label>";
-         if(empty($salles  )) $message.= "<label>saisir une salles !</label>";
-         if(empty($matieres)) $message.= "<label>saisir un matieres!</label>";
+         if(empty($salles  )) $message.= "<label>saisir une salle !</label>";
+         if(empty($matieres)) $message.= "<label>saisir une matiere!</label>";
+         if(empty($niveau)) $message.= "<label>saisir votre niveau!</label>";
+         if(empty($classe)) $message.= "<label>entrer une classe!</label>";
          if(empty($nom_prof)) $message.= "<label>entre le nom du prof!</label>";
 
          
@@ -24,14 +28,16 @@ $message1="";
             
                 include("Connection_dba.php");
               
-                $sth = $dbco->prepare(" INSERT INTO emploi_du_temps(jours,horaire,salles,matieres,nom_prof)
-                VALUES (?, ?, ?, ?, ?) "); 
+                $sth = $dbco->prepare(" INSERT INTO emploi_du_temps(jour,horaire,salle,matiere,niveau,classe,nom_prof)
+                VALUES (?, ?, ?, ?, ?, ?, ?) "); 
     
                 $sth->bindValue(1, $jours);
                 $sth->bindValue(2, $horaire);
                 $sth->bindValue(3, $salles);
                 $sth->bindValue(4, $matieres);
-                $sth->bindValue(5, $nom_prof);
+                $sth->bindValue(5, $niveau);
+                $sth->bindValue(6, $classe);
+                $sth->bindValue(7, $nom_prof);
 
                 $sth->execute();
 
@@ -74,7 +80,7 @@ $message1="";
                 </div>
             </div>  
         <div class="container-fluid" style="display: flex;justify-content:center;">
-        <h1 class="text-center" style="margin-top:200px;margin-bottom :40px;font-weight:bold;">EMPLOI DU TEMPS </h1>
+        <h1 class="text-center" style="margin-top:150px;font-weight:bold;">EMPLOI DU TEMPS </h1>
         </div >
 
         <div style="display:flex;justify-content:center;">
@@ -107,7 +113,19 @@ $message1="";
                   </div>  
                     <div class="mb-3 row form-inline">
                         <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">MATIERES:</label>
-                        <input type="text"  name="matieres"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre adresse">
+                        <input type="text"  name="matieres"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre matiéres">
+                    </div>
+                    <div class="mb-3 row form-inline">
+                        <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">NIVEAU:</label>
+                        <select type="text"  name="niveau" class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="entrer votre niveau">
+                            <option value=""></option>
+                            <option >Primaire</option>
+                            <option >Secondaire</option>
+                          </select>
+                    </div>
+                    <div class="mb-3 row form-inline">
+                        <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">CLASSES:</label>
+                        <input type="text"  name="classe"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre classe">
                     </div>
                     <div class="mb-3 row form-inline">
                         <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">NOM DU PROFESSEUR:</label>

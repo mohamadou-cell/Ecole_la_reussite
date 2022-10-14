@@ -51,20 +51,9 @@
 <?php
 if(isset($_POST["valide"])){
     if(isset($_POST["id"]) && isset($_POST["prenom"]) && isset($_POST["nom"]) && isset($_POST["adresse"]) && isset($_POST["email"]) && isset($_POST["date_naissance"]) && isset($_POST["fonction"])&& isset($_POST["nationalite"])  && isset($_POST["sexe"])  && isset($_POST["telephone"]))
-    {   /* if(empty($_POST["prenom"])) $message.= "<li>saisir un prenom!</li>";
-         if(empty($_POST["nom"])) $message.="<li>saisir un nom !</li>";
-         if(empty($_POST["adresse"])) $message.= "<li>saisir une adresse !</li>";
-         if(empty($_POST["email"])) $message.= "<li>saisir un email!</li>";
-         if(!empty($_POST["date_naissance"]))  $message.= "<li>entre la date_naissance!</li>";
-         if(empty($_POST["fonction"] )) $message.= "<li>saisir la fonction!</li>";
-         if(empty($_POST["nationalite"])) $message.="<li>saisir une nationalite !</li>";
-         if(empty($_POST["sexe"])) $message.= "<li>entre le sexe !</li>";
-         if(empty($_POST["telephone"])) $message.= "<li>saisir un numéro telephone!</li>"; */
+    {   
         if(!empty($_POST["prenom"]) && !empty($_POST["prenom"]) && !empty($_POST["nom"]) && !empty($_POST["adresse"]) && !empty($_POST["email"]) && !empty($_POST["date_naissance"]) && !empty($_POST["fonction"]) && !empty($_POST["nationalite"]) && !empty($_POST["sexe"]) && !empty($_POST["telephone"])){
-            /* if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == '') {
-                echo "Veuillez écrire un mail correcte";
-                exit();
-              } */
+
             $id = $_POST["id"];
             $prenom = $_POST["prenom"];
             $nom = $_POST["nom"];

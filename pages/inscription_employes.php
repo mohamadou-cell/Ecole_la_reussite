@@ -85,7 +85,6 @@ $message3="";
           <title>Document</title>
       </head>
   <body>  
-    <div class="joli" style="display:flex;"></div>
             <div class="logo container-fluid" style="background-color:#f8f9fa;position:fixed;width:100%; height: 150px;background-color:#0c82d1;display:flex;align-items:center;" >
                 <div class="container-fluid"><img src="images.jpeg" data-toggle="modal" data-target="#exampleModal" style="float: left;"></div>
                     <div class="menu" style="background-color:#0c82d1;">
@@ -122,7 +121,7 @@ $message3="";
                 </div>
                     <div class="mb-3 row form-inline" >
                       <label for="exampleFormControlInput1" style=" display:flex;justify-content:left;" class="form-label col-lg-3">PRENOM:</label>
-                      <input type="text" name="prenom"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre prenom" required>
+                      <input type="text" name="prenom"  class="form-control col-lg-6" id="exampleFormControlInput1" placeholder="votre prenom" >
 
                   </div>
                     <div class="mb-3 row form-inline">

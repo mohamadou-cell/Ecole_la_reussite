@@ -20,25 +20,16 @@
             $list = "SELECT * FROM emploi_du_temps where id_edt =$id";
             $result = $dbco->query($list);
             $data = $result->fetch();
-                $id = $data["	id_edt"]; 
-                $jours = $data["jours"];
+                $jour = $data["jour"];
                 $horaire = $data["horaire"];
-                $salles = $data["salles"];
-                $matieres= $data["matieres"];
+                $salle = $data["salle"];
+                $matiere= $data["matiere"];
+                $niveau= $data["niveau"];
+                $classe= $data["classe"];
                 $nom_prof = $data["nom_prof"];
                 
-                echo "<form action='Emplois_du_temps.php' method='post'><input value='$id' name='id'><input value='$horaire' name='horaire'><input value='$salles' name='salles'><input value=' $matieres' name='matieres'><input value=' $nom_prof' name='nom_prof'>
+                echo "<form action='Modifier_emploi_du_temps1.php' method='post'><input value='$id' name='id'><input value='$horaire' name='horaire'><input value='$salles' name='salles'><input value=' $matieres' name='matieres'><input value=' $niveau' name='niveau'><input value=' $classe' name='classe'><input value=' $nom_prof' name='nom_prof'>
                 <input onclick='return confirm(\"Êtes-vous sûr de vouloir modifier\")' class='btn btn-warning' value='Modifier' type='submit' name='valide'></form>";
-                
-        
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-        
             }
               
 
